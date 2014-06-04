@@ -10,43 +10,24 @@ Starry is a JavaScript star rating library.
 
 HTML markup:
 ```html
-<div id="starry" name="starrating"></div>
+<div id="starry" name="starry"></div>
 ```
-Without options:
+JavaScript markup:
 ```javascript
-$.("#starry").starry();
-```
-With options:
-```javascript
-$.("#starry").starry({
-	stars: 5,
-	userId: 0,
-	file: 'http://www.example.com/rating.php',
-	multiple: false,
-	startValue: 0,
-	readOnly: false,
-	tooltips: [
-		'Worst',
-		'Bad',
-		'OK',
-		'Good',
-		'Excellent'
-	]
+$(document).ready(function () {
+	var starry = new Starry('#starry');
+	starry.init({
+		file: '../rate.php' // Path / URL to the rate file!
+	});
 });
 ```
-
--------------
-
-### Documentaion
-
-[https://github.com/Teddy95/Starry/wiki](https://github.com/Teddy95/Starry/wiki)
 
 -------------
 
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.2.0.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.0.0.zip)**
 - [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
 
 -------------
