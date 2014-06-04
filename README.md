@@ -51,7 +51,7 @@ echo $_POST['user'];
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.0.0.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.0.1.zip)**
 - [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
 
 -------------
