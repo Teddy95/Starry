@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 | Option | Type | Default | Description | 
 |:----- |:----- |:----- |:----- |
-| stars | int | 5 | Number of rating stars. | 
+| stars | int | 5 | Number of rating stars. You can choose 3, 5, 6, 8 or 10. | 
 | userId | int | 0 | Id of the user who has voted. | 
 | file | string | false | File to which the rating will be sent. | 
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
