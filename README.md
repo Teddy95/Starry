@@ -24,6 +24,20 @@ $(document).ready(function () {
 
 -------------
 
+### Options
+
+| Option | Type | Default | Description | 
+|:----- |:----- |:----- |:----- |
+| stars | int | 5 | Number of rating stars. | 
+| userId | int | 0 | Id of the user who has voted. | 
+| file | string | false | File to which the rating will be sent. | 
+| multiple | boolean | false | Determines whether the user can submit several ratings. | 
+| startValue | int | 0 | Preloaded rating. | 
+| readOnly | boolean | false | Determines whether the user can submit ratings. | 
+| tooltips | array | false | Tooltips for the stars. | 
+
+-------------
+
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
