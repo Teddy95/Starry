@@ -55,3 +55,5 @@ $(document).ready(function () {
 ### License
 
 The MIT License (MIT) - [View LICENSE.md](https://github.com/Teddy95/Starry/blob/master/LICENSE.md)
+
+The default icons are from [https://github.com/paomedia/small-n-flat](https://github.com/paomedia/small-n-flat)
