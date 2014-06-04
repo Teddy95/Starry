@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document - starry.css */
+
+/* Starry */
+
+.Starry {
+	position: relative;
+	overflow: hidden;
+	height: 32px !important;
+	display: inline-block;
+	text-align: left !important;
+}
+
+.Starry-readonly {
+	position: relative;
+	overflow: hidden;
+	height: 32px !important;
+	display: inline-block;
+}
+
+.Starry > .Starry-readonly {
+	position: absolute !important;
+}
+
+.Starry-readonly > .Starry-stars {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 32px !important;
+	width: 100%;
+	overflow: hidden;
+}
+
+.Starry:hover > .Starry-readonly > .Starry-stars:last-child {
+	display: none;
+}
+
+.Starry-star {
+	height: 32px !important;
+	width: 32px !important;
+	position: absolute;
+	top: 0px;
+	/*background-color: #ffffff;*/
+}
+
+.Starry-inner > .Starry-star {
+	height: 32px !important;
+	width: 32px !important;
+	position: absolute;
+	top: 0px;
+	background-repeat: no-repeat;
+	background-position: top left;
+	opacity: 0;
+}
+
+.Starry-inner > .Starry-star:hover, .Starry-inner > .Starry-star:hover ~ .Starry-star {
+	opacity: 1;
+	cursor: pointer;
+}
+
+/* tipsy manipulation */
+
+.tipsy {
+	font-family: arial;
+	font-size: 14px;
+}
