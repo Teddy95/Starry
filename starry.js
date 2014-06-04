@@ -93,9 +93,9 @@ function Starry (element) {
 
 			if (settings.stars == 5) {
 				settings.tooltips = [
-					'Worst',
-					'Bad',
-					'OK',
+					'Awful',
+					'Poor',
+					'Average',
 					'Good',
 					'Excellent'
 				];
