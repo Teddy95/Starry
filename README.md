@@ -48,6 +48,12 @@ echo $_POST['user'];
 
 -------------
 
+### Cookies
+
+Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings! :cookie:
+
+-------------
+
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
