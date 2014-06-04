@@ -21,6 +21,16 @@ $(document).ready(function () {
 	});
 });
 ```
+Read params in php:
+```php
+<?php
+// Get rating
+echo $_POST['rate'];
+
+// Get user id
+echo $_POST['user'];
+?>
+```
 
 -------------
 
