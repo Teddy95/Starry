@@ -2,7 +2,7 @@
 
 ![Image](http://i.imgur.com/nZpT2Yb.png)
 
-Starry is a JavaScript star rating library.
+Starry is a JavaScript star rating system.
 
 ### Installation
 
