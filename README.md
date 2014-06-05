@@ -51,6 +51,16 @@ $(document).ready(function () {
 
 -------------
 
+### Icons (Stars)
+
+These are the default icons:
+
+![grey](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/1/star_grey.png) ![colored](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/1/star_color.png) ![hover](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/1/star_hover.png)
+
+More icons can be found [here](https://github.com/Teddy95/Starry/tree/icons).
+
+-------------
+
 ### Cookies
 
 Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings! :cookie:
