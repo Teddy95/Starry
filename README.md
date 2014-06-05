@@ -17,19 +17,11 @@ JavaScript markup:
 $(document).ready(function () {
 	var starry = new Starry('#starry');
 	starry.init({
-		file: '../rate.php' // Path / URL to the rate file!
+		success: function (level) {
+			alert('You voted: ' + level);
+		}
 	});
 });
-```
-Read params in php:
-```php
-<?php
-// Get rating
-echo $_POST['rate'];
-
-// Get user id
-echo $_POST['user'];
-?>
 ```
 
 -------------
@@ -39,12 +31,11 @@ echo $_POST['user'];
 | Option | Type | Default | Description | 
 |:----- |:----- |:----- |:----- |
 | stars | int | 5 | Number of rating stars. You can choose 3, 5, 6, 8 or 10. | 
-| userId | int | 0 | Id of the user who has voted. | 
-| file | string | false | File to which the rating will be sent. | 
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
 | startValue | int | 0 | Preloaded rating. | 
 | readOnly | boolean | false | Determines whether the user can submit ratings. | 
 | tooltips | array | false | Tooltips for the stars. | 
+| success | function | false | A function to be called if the request succeeds. The function gets passed one argument: Your rating (3 for example). | 
 
 -------------
 
@@ -69,7 +60,7 @@ Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings!
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.0.1.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.2.0.zip)**
 - [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
 
 -------------
