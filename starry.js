@@ -66,16 +66,6 @@ function Starry (element) {
 			settings.stars = 5;
 		}
 
-		if (typeof settings.userId == 'undefined') {
-			settings.userId = 0;
-		}
-
-		if (typeof settings.file == 'undefined') {
-			if (typeof settings.readOnly == 'undefined' || settings.readOnly === false) {
-				return false;
-			}
-		}
-
 		if (typeof settings.multiple == 'undefined') {
 			settings.multiple = false;
 		}
@@ -100,6 +90,10 @@ function Starry (element) {
 					'Excellent'
 				];
 			}
+		}
+
+		if (typeof settings.success == 'undefined') {
+			settings.success = false;
 		}
 
 		if (settings.multiple === false) {
@@ -221,12 +215,11 @@ function Starry (element) {
 					$('#Starry-stars_' + elementName).css('width', width + '%');
 				}
 
-				$.post(settings.file, {
-					rate: level,
-					user: settings.userId
-				});
-
 				$('.tipsy').css('display', 'none');
+
+				if (settings.success !== false) {
+					settings.success(level);
+				}
 			});
 
 			return;
