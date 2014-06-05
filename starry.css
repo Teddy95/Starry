@@ -31,9 +31,11 @@
 	overflow: hidden;
 }
 
+/*
 .Starry:hover > .Starry-readonly > .Starry-stars:last-child {
 	display: none;
 }
+*/
 
 .Starry-star {
 	height: 32px !important;
