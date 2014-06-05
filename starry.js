@@ -186,7 +186,7 @@ function Starry (element) {
 				}
 
 				starPosition = i * 32;
-				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + "icons/star_color.png);'></div>";
+				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + "icons/star_hover.png);'></div>";
 			}
 
 			newCode += "</div></div>";
