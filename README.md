@@ -1,6 +1,8 @@
 # Starry
 
-![Image](http://i.imgur.com/nZpT2Yb.png)
+<p align="center">
+	<img src="http://i.imgur.com/nZpT2Yb.png" alt="">
+</p>
 
 Starry is a JavaScript star rating system. [Demo](http://teddy95.github.io/Starry/)
 
