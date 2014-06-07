@@ -2,9 +2,9 @@
 
 <p align="center">
 	<img src="http://i.imgur.com/nZpT2Yb.png" alt="">
+	<br />
+	<span align="center">Starry is a JavaScript star rating system. <a href="http://teddy95.github.io/Starry/">Demo</a></span>
 </p>
-
-Starry is a JavaScript star rating system. [Demo](http://teddy95.github.io/Starry/)
 
 ### Installation
 
