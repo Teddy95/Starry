@@ -6,6 +6,8 @@
 	<span align="center">Starry is a JavaScript star rating system. <a href="http://teddy95.github.io/Starry/">Demo</a></span>
 </p>
 
+-------------
+
 ### Installation
 
 > You need [jQuery](https://github.com/jquery/jquery) version 1.11.0 or higher!
