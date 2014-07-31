@@ -74,7 +74,7 @@ Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings!
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.2.0.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v1.2.1.zip)**
 - [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
 
 -------------
