@@ -63,7 +63,7 @@ function Starry (element) {
 			settings = {};
 		}
 
-		if (typeof settings.stars == 'undefined') {
+		if (typeof settings.stars == 'undefined' || settings.stars == 0) {
 			settings.stars = 5;
 		}
 
