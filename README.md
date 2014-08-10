@@ -38,7 +38,7 @@ $(document).ready(function () {
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
 | startValue | int | 0 | Preloaded rating. | 
 | readOnly | boolean | false | Determines whether the user can submit ratings. | 
-| tooltips | array | false | Tooltips for the stars. | 
+| tooltips | array | false | Tooltips for the stars. (You must include [tipsy](https://github.com/jaz303/tipsy)!) | 
 | success | function | false | A function to be called if the request succeeds. The function gets passed one argument: Your rating (3 for example). | 
 
 -------------
