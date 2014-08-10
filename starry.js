@@ -34,7 +34,8 @@ starryPath = starryPath[starryPath.length-1];
 starryPath = starryPath.src;
 starryFilename = starryPath.split('/').reverse()[0];
 var starryInfo = {
-	url: starryPath.replace(starryFilename, '')
+	url: starryPath.replace(starryFilename, ''),
+	author: "Andre Sieverding"
 };
 
 function Starry (element) {
@@ -44,6 +45,12 @@ function Starry (element) {
 
 	// Create the star rating
 	Starry.prototype.init = function (settings) {
+		if (typeof jQuery != 'function') {
+			//alert('Starry: You must include jQuery!');
+
+			return false;
+		}
+
 		if (typeof $(this.element).attr('name') == 'undefined') {
 			return false;
 		}
@@ -111,7 +118,6 @@ function Starry (element) {
 		}
 
 		// Readonly
-
 		if (settings.readOnly == true) {
 			var starPosition;
 			var greyStars;
@@ -140,7 +146,6 @@ function Starry (element) {
 			return;
 		} else {
 			// Start value
-
 			var starPosition;
 			var greyStars;
 			var coloredStars;
@@ -164,7 +169,6 @@ function Starry (element) {
 			startValue = "<div class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div id='Starry-stars_" + elementName + "' class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
 
 			// Rating script
-
 			var newCode;
 			var tooltip;
 
@@ -173,7 +177,7 @@ function Starry (element) {
 			newCode = "<div id='Starry_" + elementName + "' class='Starry' style='width: " + starryWidth + "px;'>" + startValue + "<div id='Starry-inner_" + elementName + "' class='Starry-inner'>";
 
 			for (var i = 0; settings.stars > i; i++) {
-				if (settings.tooltips != false) {
+				if (settings.tooltips !== false && $.isFunction($.fn.tipsy) === true) {
 					tooltip = " Starry-tooltip' title='" + settings.tooltips[settings.stars - 1 - i];
 				} else {
 					tooltip = '';
@@ -186,6 +190,13 @@ function Starry (element) {
 			newCode += "</div></div>";
 
 			$(this.element).replaceWith(newCode);
+
+			// Create tipsy tooltips
+			if (settings.tooltips !== false && $.isFunction($.fn.tipsy) === true) {
+				$('.Starry-tooltip').tipsy({
+					gravity: 's'
+				});
+			}
 
 			// Star onclick event
 			$('.Starry-star-' + elementName).off();
