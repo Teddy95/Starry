@@ -67,12 +67,6 @@ function Starry (element) {
 			settings.stars = 5;
 		}
 
-		if (settings.stars == 3 || settings.stars == 5 || settings.stars == 6 || settings.stars == 8 || settings.stars == 10) {
-			settings.stars = settings.stars;
-		} else {
-			settings.stars = 5;
-		}
-
 		if (typeof settings.multiple == 'undefined') {
 			settings.multiple = false;
 		}
