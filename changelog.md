@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 1.4.0 - 11.08.2014
+
+- Now you can specify any number of stars. (Old: 3, 5, 6, 8 or 10; New: 1 - n)
+
 ### Version 1.3.0 - 10.08.2014
 
 - Include functions: check jQuery and check tipsy
