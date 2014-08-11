@@ -34,9 +34,9 @@ $(document).ready(function () {
 
 | Option | Type | Default | Description | 
 |:----- |:----- |:----- |:----- |
-| stars | int | 5 | Number of rating stars. | 
+| stars | int | 5 | Number of rating stars. (= y) | 
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
-| startValue | int | 0 | Preloaded rating. | 
+| startValue | int | 0 | Preloaded rating. <code>{x ∈ ℝ<sub>+</sub> ¦ x <= y}</code> | 
 | readOnly | boolean | false | Determines whether the user can submit ratings. | 
 | tooltips | array | false | Tooltips for the stars. (You must include [tipsy](https://github.com/jaz303/tipsy)!) | 
 | success | function | false | A function to be called if the request succeeds. The function gets passed one argument: Your rating (3 for example). | 
