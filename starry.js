@@ -25,7 +25,7 @@
  * SOFTWARE.
  */
 
- // Starry info
+// Starry info
 var starryPath;
 var starryFilename;
 var starryInfo;
