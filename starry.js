@@ -287,6 +287,7 @@ function Starry (element) {
 		if (this.stars === true) {
 			this.destroy();
 
+			var settings;
 			settings = this.initSettings;
 			settings.startValue = rating;
 
