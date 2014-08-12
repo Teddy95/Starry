@@ -1,5 +1,13 @@
 # Changelog
 
+### Version 2.0.0 - 12.08.2014
+
+- Fixed tooltip bug
+- Add function starry.destroy()
+- Add function starry.rebuild(settings)
+- Add function starry.getRating()
+- Add function starry.setRating(rating)
+
 ### Version 1.4.0 - 11.08.2014
 
 - Now you can specify any number of stars. (Old: 3, 5, 6, 8 or 10; New: 1 - n)
