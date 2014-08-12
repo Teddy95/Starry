@@ -117,7 +117,7 @@ function Starry (element) {
 		this.initSettings = settings;
 
 		// Readonly
-		if (settings.readOnly == true) {
+		if (settings.readOnly === true) {
 			var starPosition;
 			var greyStars;
 			var coloredStars;
@@ -168,7 +168,7 @@ function Starry (element) {
 			width = 100 / settings.stars * settings.startValue;
 			starryWidth = settings.stars * 32;
 
-			startValue = "<div class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div id='Starry-stars_" + elementName + "' class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
+			startValue = "<div id='Starry-readonly_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div id='Starry-stars_" + elementName + "' class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
 
 			// Rating script
 			var newCode;
@@ -226,6 +226,8 @@ function Starry (element) {
 
 					width = 100 / settings.stars * level;
 					$('#Starry-stars_' + elementName).css('width', width + '%');
+
+					$('#Starry-readonly_' + elementName).attr('id', 'Starry_' + elementName);
 				} else {
 					width = 100 / settings.stars * level;
 					$('#Starry-stars_' + elementName).css('width', width + '%');
@@ -289,9 +291,53 @@ function Starry (element) {
 
 			var settings;
 			settings = this.initSettings;
+
+			if (rating > this.initSettings.stars) {
+				rating = this.initSettings.stars;
+			} else if (rating < 0) {
+				rating = 0;
+			}
+
 			settings.startValue = rating;
 
 			this.init(settings);
+		}
+	}
+
+	// Update Starry
+	Starry.prototype.update = function (settings) {
+		if (typeof settings != 'undefined') {
+			this.destroy();
+
+			if (settings.stars >= 1) {
+				this.initSettings.stars = settings.stars;
+			}
+
+			if (settings.multiple === true) {
+				this.initSettings.multiple = true;
+			} else if (settings.multiple === false) {
+				this.initSettings.multiple = false;
+			}
+
+			if (settings.readOnly === true) {
+				this.initSettings.readOnly = true;
+			} else if (settings.readOnly === false) {
+				this.initSettings.readOnly = false;
+			}
+
+			if (typeof settings.tooltips == 'object') {
+				this.initSettings.tooltips = settings.tooltips;
+			} else if (settings.tooltips === false) {
+				this.initSettings.tooltips = false;
+			}
+
+			if (typeof settings.success == 'function') {
+				this.initSettings.success = settings.success;
+			} else if (settings.success === false) {
+				this.initSettings.success = false;
+			}
+
+			this.init(this.initSettings);
 		}
 	}
 
