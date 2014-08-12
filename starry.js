@@ -42,6 +42,9 @@ function Starry (element) {
 
 	this.element = element;
 	this.elementName = false;
+	this.stars = false;
+	this.placeholder = $(element).clone();
+	this.initSettings = false;
 
 	// Create the star rating
 	Starry.prototype.init = function (settings) {
@@ -81,16 +84,16 @@ function Starry (element) {
 
 		if (typeof settings.tooltips == 'undefined') {
 			settings.tooltips = false;
+		}
 
-			if (settings.stars == 5) {
-				settings.tooltips = [
-					'Awful',
-					'Poor',
-					'Average',
-					'Good',
-					'Excellent'
-				];
-			}
+		if (settings.stars == 5 && settings.tooltips === true) {
+			settings.tooltips = [
+				'Awful',
+				'Poor',
+				'Average',
+				'Good',
+				'Excellent'
+			];
 		}
 
 		if (typeof settings.success == 'undefined') {
@@ -110,6 +113,8 @@ function Starry (element) {
 				}
 			}
 		}
+
+		this.initSettings = settings;
 
 		// Readonly
 		if (settings.readOnly == true) {
@@ -136,8 +141,11 @@ function Starry (element) {
 			newCode = "<div id='Starry_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
 
 			$(this.element).replaceWith(newCode);
+			$('#Starry_' + elementName).attr('data-rate', settings.startValue);
 
-			return;
+			this.stars = true;
+
+			return true;
 		} else {
 			// Start value
 			var starPosition;
@@ -184,13 +192,16 @@ function Starry (element) {
 			newCode += "</div></div>";
 
 			$(this.element).replaceWith(newCode);
+			$('#Starry_' + elementName).attr('data-rate', settings.startValue);
 
-			// Create tipsy tooltips
-			if (settings.tooltips !== false && $.isFunction($.fn.tipsy) === true) {
-				$('.Starry-tooltip').tipsy({
-					gravity: 's'
-				});
-			}
+			setTimeout(function () {
+				// Create tipsy tooltips
+				if (settings.tooltips !== false && $.isFunction($.fn.tipsy) === true) {
+					$('.Starry-tooltip').tipsy({
+						gravity: 's'
+					});
+				}
+			}, 0);
 
 			// Star onclick event
 			$('.Starry-star-' + elementName).off();
@@ -225,9 +236,62 @@ function Starry (element) {
 				if (settings.success !== false) {
 					settings.success(level);
 				}
+
+				$('#Starry_' + elementName).attr('data-rate', level);
 			});
 
-			return;
+			this.stars = true;
+
+			return true;
 		}
 	}
+
+	// Destroy the star rating
+	Starry.prototype.destroy = function () {
+		if (this.stars === true) {
+			$('#Starry_' + this.elementName).replaceWith(this.placeholder);
+
+			this.stars = false;
+
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	// Rebuild the star rating
+	Starry.prototype.rebuild = function (settings) {
+		this.destroy();
+
+		if (typeof settings == 'undefined') {
+			if (this.initSettings === false) {
+				this.init();
+			} else {
+				this.init(this.initSettings);
+			}
+		} else {
+			this.init(settings);
+		}
+	}
+
+	// Get the active rating
+	Starry.prototype.getRating = function () {
+		var rate;
+		rate = $('#Starry_' + this.elementName).attr('data-rate');
+
+		return rate;
+	}
+
+	// Set the active rating
+	Starry.prototype.setRating = function (rating) {
+		if (this.stars === true) {
+			this.destroy();
+
+			settings = this.initSettings;
+			settings.startValue = rating;
+
+			this.init(settings);
+		}
+	}
+
 }
