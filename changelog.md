@@ -1,5 +1,11 @@
 # Changelog
 
+### Version 2.1.0 - 19.08.2014
+
+- Add function starry.update()
+- starry.setRating(rating) function has been modified.
+- Star graphic `star_grey.png` has been updated.
+
 ### Version 2.0.0 - 12.08.2014
 
 - Fixed tooltip bug
