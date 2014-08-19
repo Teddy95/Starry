@@ -2,7 +2,7 @@
 
 ### Version 2.1.0 - 19.08.2014
 
-- Add function starry.update()
+- Add function starry.update(settings)
 - starry.setRating(rating) function has been modified.
 - Star graphic `star_grey.png` has been updated.
 
