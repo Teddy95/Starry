@@ -274,6 +274,8 @@ function Starry (element) {
 		} else {
 			this.init(settings);
 		}
+		
+		return;
 	}
 
 	// Get the active rating
@@ -302,6 +304,8 @@ function Starry (element) {
 
 			this.init(settings);
 		}
+		
+		return;
 	}
 
 	// Update Starry
@@ -339,6 +343,8 @@ function Starry (element) {
 
 			this.init(this.initSettings);
 		}
+		
+		return;
 	}
 
 }
