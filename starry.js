@@ -38,7 +38,8 @@ var starryInfo = {
 	author: "Andre Sieverding"
 };
 
-function Starry (element) {
+function Starry (element)
+{
 
 	this.element = element;
 	this.elementName = false;
@@ -47,7 +48,8 @@ function Starry (element) {
 	this.initSettings = false;
 
 	// Create the star rating
-	Starry.prototype.init = function (settings) {
+	Starry.prototype.init = function (settings)
+	{
 		if (typeof jQuery != 'function') {
 			//alert('Starry: You must include jQuery!');
 
@@ -249,7 +251,8 @@ function Starry (element) {
 	}
 
 	// Destroy the star rating
-	Starry.prototype.destroy = function () {
+	Starry.prototype.destroy = function ()
+	{
 		if (this.stars === true) {
 			$('#Starry_' + this.elementName).replaceWith(this.placeholder);
 
@@ -262,7 +265,8 @@ function Starry (element) {
 	}
 
 	// Rebuild the star rating
-	Starry.prototype.rebuild = function (settings) {
+	Starry.prototype.rebuild = function (settings)
+	{
 		this.destroy();
 
 		if (typeof settings == 'undefined') {
@@ -279,7 +283,8 @@ function Starry (element) {
 	}
 
 	// Get the active rating
-	Starry.prototype.getRating = function () {
+	Starry.prototype.getRating = function ()
+	{
 		var rate;
 		rate = $('#Starry_' + this.elementName).attr('data-rate');
 
@@ -287,7 +292,8 @@ function Starry (element) {
 	}
 
 	// Set the active rating
-	Starry.prototype.setRating = function (rating) {
+	Starry.prototype.setRating = function (rating)
+	{
 		if (this.stars === true) {
 			this.destroy();
 
@@ -309,7 +315,8 @@ function Starry (element) {
 	}
 
 	// Update Starry
-	Starry.prototype.update = function (settings) {
+	Starry.prototype.update = function (settings)
+	{
 		if (typeof settings != 'undefined') {
 			this.destroy();
 
