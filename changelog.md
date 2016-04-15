@@ -3,7 +3,7 @@
 ### Version 3.0.0 - 00.00.2016
 
 - [x] Specify any number of stars greater than 2.
-- [ ] Use star icons greater or smaller than 32px × 32px.
+- [x] Use star icons greater or smaller than 32px × 32px.
 
 ### Version 2.1.0 - 19.08.2014
 
