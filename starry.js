@@ -131,6 +131,15 @@ function Starry (element)
 			starSize = 32;
 		}
 
+		// Set height and witdh in css
+		$('.Starry').css('height', starSize + 'px');
+		$('.Starry-readonly').css('height', starSize + 'px');
+		$('.Starry-readonly').children('.Starry-stars').css('height', starSize + 'px');
+		$('.Starry-star').css('height', starSize + 'px');
+		$('.Starry-star').css('width', starSize + 'px');
+		$('.Starry-inner').children('.Starry-star').css('height', starSize + 'px');
+		$('.Starry-inner').children('.Starry-star').css('width', starSize + 'px');
+
 		// Readonly
 		if (settings.readOnly === true) {
 			var starPosition;
