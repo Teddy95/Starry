@@ -4,17 +4,12 @@
 /* Starry */
 
 .Starry {
-	position: relative;
-	overflow: hidden;
-	height: 32px !important;
-	display: inline-block;
 	text-align: left !important;
 }
 
-.Starry-readonly {
+.Starry, .Starry-readonly {
 	position: relative;
 	overflow: hidden;
-	height: 32px !important;
 	display: inline-block;
 }
 
@@ -26,7 +21,6 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	height: 32px !important;
 	width: 100%;
 	overflow: hidden;
 }
@@ -38,16 +32,12 @@
 */
 
 .Starry-star {
-	height: 32px !important;
-	width: 32px !important;
 	position: absolute;
 	top: 0px;
 	/*background-color: #ffffff;*/
 }
 
 .Starry-inner > .Starry-star {
-	height: 32px !important;
-	width: 32px !important;
 	position: absolute;
 	top: 0px;
 	background-repeat: no-repeat;
