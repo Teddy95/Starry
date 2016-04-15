@@ -117,6 +117,19 @@ function Starry (element)
 		}
 
 		this.initSettings = settings;
+		
+		// Determine icon height and width
+		var starIcon = new Image();
+		starIcon.src = starryInfo.url + "icons/star_grey.png";
+		var starWidth = starIcon.width;
+		var starHeight = starIcon.height;
+		var starSize;
+		
+		if (starWidth == starHeight) {
+			starSize = starWidth;
+		} else {
+			starSize = 32;
+		}
 
 		// Readonly
 		if (settings.readOnly === true) {
@@ -132,13 +145,13 @@ function Starry (element)
 			coloredStars = '';
 
 			for (var i = 0; settings.stars > i; i++) {
-				starPosition = i * 32;
+				starPosition = i * starSize;
 				greyStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_grey.png' alt='' style='left: " + starPosition + "px;' />";
 				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_color.png' alt='' style='left: " + starPosition + "px;' />";
 			}
 
 			width = 100 / settings.stars * settings.startValue;
-			starryWidth = settings.stars * 32;
+			starryWidth = settings.stars * starSize;
 
 			newCode = "<div id='Starry_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
 
@@ -162,13 +175,13 @@ function Starry (element)
 			coloredStars = '';
 
 			for (var i = 0; settings.stars > i; i++) {
-				starPosition = i * 32;
+				starPosition = i * starSize;
 				greyStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_grey.png' alt='' style='left: " + starPosition + "px;' />";
 				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_color.png' alt='' style='left: " + starPosition + "px;' />";
 			}
 
 			width = 100 / settings.stars * settings.startValue;
-			starryWidth = settings.stars * 32;
+			starryWidth = settings.stars * starSize;
 
 			startValue = "<div id='Starry-readonly_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div id='Starry-stars_" + elementName + "' class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
 
@@ -187,7 +200,7 @@ function Starry (element)
 					tooltip = '';
 				}
 
-				starPosition = i * 32;
+				starPosition = i * starSize;
 				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + "icons/star_hover.png);'></div>";
 			}
 
