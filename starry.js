@@ -320,7 +320,7 @@ function Starry (element)
 		if (typeof settings != 'undefined') {
 			this.destroy();
 
-			if (settings.stars >= 1) {
+			if (settings.stars >= 2) {
 				this.initSettings.stars = settings.stars;
 			}
 
