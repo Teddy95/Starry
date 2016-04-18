@@ -353,6 +353,12 @@ function Starry (element)
 				this.initSettings.readOnly = false;
 			}
 
+			if (typeof settings.iconPath == 'string') {
+				this.initSettings.iconPath = settings.iconPath;
+			} else if (settings.iconPath === false) {
+				this.initSettings.iconPath = 'icons/';
+			}
+
 			if (typeof settings.tooltips == 'object') {
 				this.initSettings.tooltips = settings.tooltips;
 			} else if (settings.tooltips === false) {
