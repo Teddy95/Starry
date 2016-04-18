@@ -88,6 +88,10 @@ function Starry (element)
 			settings.tooltips = false;
 		}
 
+		if (typeof settings.iconPath == 'undefined') {
+			settings.iconPath = 'icons/';
+		}
+
 		if (settings.stars == 5 && settings.tooltips === true) {
 			settings.tooltips = [
 				'Awful',
@@ -120,7 +124,7 @@ function Starry (element)
 		
 		// Determine icon height and width
 		var starIcon = new Image();
-		starIcon.src = starryInfo.url + "icons/star_grey.png";
+		starIcon.src = starryInfo.url + settings.iconPath + "star_grey.png";
 		var starWidth = starIcon.width;
 		var starHeight = starIcon.height;
 		var starSize;
@@ -146,22 +150,19 @@ function Starry (element)
 
 			for (var i = 0; settings.stars > i; i++) {
 				starPosition = i * starSize;
-				greyStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_grey.png' alt='' style='left: " + starPosition + "px;' />";
-				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_color.png' alt='' style='left: " + starPosition + "px;' />";
+				greyStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_grey.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
+				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_color.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
 			}
 
 			width = 100 / settings.stars * settings.startValue;
 			starryWidth = settings.stars * starSize;
 
-			newCode = "<div id='Starry_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
+			newCode = "<div id='Starry_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px; height: " + starSize + "px;'><div class='Starry-stars' style='height: " + starSize + "px;'>" + greyStars + "</div><div class='Starry-stars' style='width: " + width + "%; height: " + starSize + "px;'>" + coloredStars + "</div></div>";
 
 			$(this.element).replaceWith(newCode);
 			$('#Starry_' + elementName).attr('data-rate', settings.startValue);
 
 			this.stars = true;
-			
-			// CSS
-			this.css(starSize);
 
 			return true;
 		} else {
@@ -179,14 +180,14 @@ function Starry (element)
 
 			for (var i = 0; settings.stars > i; i++) {
 				starPosition = i * starSize;
-				greyStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_grey.png' alt='' style='left: " + starPosition + "px;' />";
-				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + "icons/star_color.png' alt='' style='left: " + starPosition + "px;' />";
+				greyStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_grey.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
+				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_color.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
 			}
 
 			width = 100 / settings.stars * settings.startValue;
 			starryWidth = settings.stars * starSize;
 
-			startValue = "<div id='Starry-readonly_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px;'><div class='Starry-stars'>" + greyStars + "</div><div id='Starry-stars_" + elementName + "' class='Starry-stars' style='width: " + width + "%;'>" + coloredStars + "</div></div>";
+			startValue = "<div id='Starry-readonly_" + elementName + "' class='Starry-readonly' style='width: " + starryWidth + "px; height: " + starSize + "px;'><div class='Starry-stars' style='height: " + starSize + "px;'>" + greyStars + "</div><div id='Starry-stars_" + elementName + "' class='Starry-stars' style='width: " + width + "%; height: " + starSize + "px;'>" + coloredStars + "</div></div>";
 
 			// Rating script
 			var newCode;
@@ -194,7 +195,7 @@ function Starry (element)
 
 			starPosition = 0;
 
-			newCode = "<div id='Starry_" + elementName + "' class='Starry' style='width: " + starryWidth + "px;'>" + startValue + "<div id='Starry-inner_" + elementName + "' class='Starry-inner'>";
+			newCode = "<div id='Starry_" + elementName + "' class='Starry' style='width: " + starryWidth + "px; height: " + starSize + "px;'>" + startValue + "<div id='Starry-inner_" + elementName + "' class='Starry-inner'>";
 
 			for (var i = 0; settings.stars > i; i++) {
 				if (settings.tooltips !== false && $.isFunction($.fn.tipsy) === true) {
@@ -204,7 +205,7 @@ function Starry (element)
 				}
 
 				starPosition = i * starSize;
-				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + "icons/star_hover.png);'></div>";
+				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + settings.iconPath + "star_hover.png); width: " + starSize + "px; height: " + starSize + "px;'></div>";
 			}
 
 			newCode += "</div></div>";
@@ -261,9 +262,6 @@ function Starry (element)
 			});
 
 			this.stars = true;
-			
-			// CSS
-			this.css(starSize);
 
 			return true;
 		}
@@ -370,23 +368,6 @@ function Starry (element)
 			this.init(this.initSettings);
 		}
 		
-		return;
-	}
-
-	// CSS modification
-	Starry.prototype.css = function (starSize)
-	{
-		// Set height and witdh in css
-		$(document).ready(function () {
-			$('.Starry').css('height', starSize + 'px');
-			$('.Starry-readonly').css('height', starSize + 'px');
-			$('.Starry-readonly').children('.Starry-stars').css('height', starSize + 'px');
-			$('.Starry-star').css('height', starSize + 'px');
-			$('.Starry-star').css('width', starSize + 'px');
-			$('.Starry-inner').children('.Starry-star').css('height', starSize + 'px');
-			$('.Starry-inner').children('.Starry-star').css('width', starSize + 'px');
-		});
-
 		return;
 	}
 
