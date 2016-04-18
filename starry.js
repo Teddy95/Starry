@@ -131,8 +131,6 @@ function Starry (element)
 			starSize = 32;
 		}
 
-		// dsifhsdkjfhdkshfdsf
-
 		// Readonly
 		if (settings.readOnly === true) {
 			var starPosition;
@@ -161,6 +159,8 @@ function Starry (element)
 			$('#Starry_' + elementName).attr('data-rate', settings.startValue);
 
 			this.stars = true;
+			
+			// CSS
 			this.css(starSize);
 
 			return true;
@@ -261,6 +261,8 @@ function Starry (element)
 			});
 
 			this.stars = true;
+			
+			// CSS
 			this.css(starSize);
 
 			return true;
