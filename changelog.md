@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 3.1.0 - 18.04.2016
+
+- Create differently star ratings in each html document.
+
 ### Version 3.0.0 - 18.04.2016
 
 - Specify any number of stars greater than 2.
