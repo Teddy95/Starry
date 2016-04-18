@@ -38,6 +38,7 @@ $(document).ready(function () {
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
 | startValue | int | 0 | Preloaded rating. <code>{x ∈ ℝ<sub>+</sub> ¦ x <= y}</code> | 
 | readOnly | boolean | false | Determines whether the user can submit ratings. | 
+| iconPath | string | `icons/` | Path to rating icons. | 
 | tooltips | array | false | Tooltips for the stars. (You must include [tipsy](https://github.com/jaz303/tipsy)!) | 
 | success | function | false | A function to be called if the request succeeds. The function gets passed one argument: Your rating (3 for example). | 
 
@@ -74,7 +75,7 @@ Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings!
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v3.0.0.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v3.1.0.zip)**
 - [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
 
 -------------
