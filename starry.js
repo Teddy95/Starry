@@ -131,14 +131,7 @@ function Starry (element)
 			starSize = 32;
 		}
 
-		// Set height and witdh in css
-		$('.Starry').css('height', starSize + 'px');
-		$('.Starry-readonly').css('height', starSize + 'px');
-		$('.Starry-readonly').children('.Starry-stars').css('height', starSize + 'px');
-		$('.Starry-star').css('height', starSize + 'px');
-		$('.Starry-star').css('width', starSize + 'px');
-		$('.Starry-inner').children('.Starry-star').css('height', starSize + 'px');
-		$('.Starry-inner').children('.Starry-star').css('width', starSize + 'px');
+		// dsifhsdkjfhdkshfdsf
 
 		// Readonly
 		if (settings.readOnly === true) {
@@ -168,6 +161,7 @@ function Starry (element)
 			$('#Starry_' + elementName).attr('data-rate', settings.startValue);
 
 			this.stars = true;
+			this.css(starSize);
 
 			return true;
 		} else {
@@ -267,6 +261,7 @@ function Starry (element)
 			});
 
 			this.stars = true;
+			this.css(starSize);
 
 			return true;
 		}
@@ -373,6 +368,23 @@ function Starry (element)
 			this.init(this.initSettings);
 		}
 		
+		return;
+	}
+
+	// CSS modification
+	Starry.prototype.css = function (starSize)
+	{
+		// Set height and witdh in css
+		$(document).ready(function () {
+			$('.Starry').css('height', starSize + 'px');
+			$('.Starry-readonly').css('height', starSize + 'px');
+			$('.Starry-readonly').children('.Starry-stars').css('height', starSize + 'px');
+			$('.Starry-star').css('height', starSize + 'px');
+			$('.Starry-star').css('width', starSize + 'px');
+			$('.Starry-inner').children('.Starry-star').css('height', starSize + 'px');
+			$('.Starry-inner').children('.Starry-star').css('width', starSize + 'px');
+		});
+
 		return;
 	}
 
