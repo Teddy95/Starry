@@ -72,6 +72,12 @@ function Starry (element)
 			settings.stars = 5;
 		}
 
+		/* temporarily */
+		if (typeof settings.starSize == 'undefined') {
+			settings.starSize = 32;
+		}
+		/* ----------- */
+
 		if (typeof settings.multiple == 'undefined') {
 			settings.multiple = false;
 		}
@@ -122,9 +128,17 @@ function Starry (element)
 
 		this.initSettings = settings;
 		
+		/**
+		/* In work...
+
 		// Determine icon height and width
-		var starIcon = $('<img>');
-		starIcon.attr('src', starryInfo.url + settings.iconPath + "star_grey.png");
+		var starIcon = document.createElement('img');
+
+		starIcon.onload = function () {
+			// code...
+		};
+
+		starIcon.src = starryInfo.url + settings.iconPath + "star_grey.png";
 		var starWidth = starIcon.width;
 		var starHeight = starIcon.height;
 		var starSize;
@@ -134,6 +148,12 @@ function Starry (element)
 		} else {
 			starSize = 32;
 		}
+		
+		*/
+
+		/* temporarily */
+		starSize = settings.starSize;
+		/* ----------- */
 
 		// Readonly
 		if (settings.readOnly === true) {
