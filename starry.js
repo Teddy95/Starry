@@ -123,8 +123,8 @@ function Starry (element)
 		this.initSettings = settings;
 		
 		// Determine icon height and width
-		var starIcon = new Image();
-		starIcon.src = starryInfo.url + settings.iconPath + "star_grey.png";
+		var starIcon = $('<img>');
+		starIcon.attr('src', starryInfo.url + settings.iconPath + "star_grey.png");
 		var starWidth = starIcon.width;
 		var starHeight = starIcon.height;
 		var starSize;
