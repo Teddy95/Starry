@@ -35,6 +35,7 @@ $(document).ready(function () {
 | Option | Type | Default | Description | 
 |:----- |:----- |:----- |:----- |
 | stars | int | 5 | Number of rating stars. (= y) | 
+| starSize | int | 32 | Height and width of star icons. | 
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
 | startValue | int | 0 | Preloaded rating. <code>{x ∈ ℝ<sub>+</sub> ¦ x <= y}</code> | 
 | readOnly | boolean | false | Determines whether the user can submit ratings. | 
@@ -75,7 +76,7 @@ Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings!
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v3.1.1.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v3.1.2.zip)**
 - [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
 
 -------------
