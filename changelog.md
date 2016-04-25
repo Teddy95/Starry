@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 3.1.2 - 25.04.2016
+
+- New option `starSize`.
+
 ### Version 3.1.1 - 25.04.2016
 
 - fixed issue [#2](https://github.com/Teddy95/Starry/issues/2).
