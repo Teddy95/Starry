@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 3.1.1 - 25.04.2016
+
+- fixed issue [#2](https://github.com/Teddy95/Starry/issues/2).
+
 ### Version 3.1.0 - 18.04.2016
 
 - Create differently star ratings in each html document.
