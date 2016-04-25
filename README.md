@@ -35,7 +35,7 @@ $(document).ready(function () {
 | Option | Type | Default | Description | 
 |:----- |:----- |:----- |:----- |
 | stars | int | 5 | Number of rating stars. (= y) | 
-| starSize | int | 32 | Height and width of star icons. | 
+| starSize | int | 32 | Height and width of star icons in pixel. | 
 | multiple | boolean | false | Determines whether the user can submit several ratings. | 
 | startValue | int | 0 | Preloaded rating. <code>{x ∈ ℝ<sub>+</sub> ¦ x <= y}</code> | 
 | readOnly | boolean | false | Determines whether the user can submit ratings. | 
