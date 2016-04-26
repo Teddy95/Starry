@@ -1,7 +1,7 @@
 # Starry
 
 <p align="center">
-	<img src="http://root.andre-sieverding.de/briefkasten/GithubRepoLogos/Starry.png" alt="">
+	<img src="http://root.andre-sieverding.de/briefkasten/GithubRepoLogos/Starry2.png" alt="">
 	<br />
 	<span align="center">Starry is a JavaScript star rating system based on Ajax. <a href="http://teddy95.github.io/Starry/">Demo</a></span>
 </p>
