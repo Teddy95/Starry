@@ -61,7 +61,7 @@ $(document).ready(function () {
 
 These are the default icons:
 
-![grey](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/7/star_grey.png) ![colored](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/7/star_color.png) ![hover](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/7/star_hover.png)
+![unrated](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/5/star_grey.png) ![rated](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/5/star_color.png) ![hover](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/5/star_hover.png)
 
 More icons can be found [here](https://github.com/Teddy95/Starry/tree/icons).
 
