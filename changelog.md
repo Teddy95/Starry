@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 3.2.0 - 00.00.2016
+
+- New default star icons
+
 ### Version 3.1.2 - 25.04.2016
 
 - New option `starSize`.
