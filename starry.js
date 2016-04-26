@@ -138,7 +138,7 @@ function Starry (element)
 			// code...
 		};
 
-		starIcon.src = starryInfo.url + settings.iconPath + "star_grey.png";
+		starIcon.src = starryInfo.url + settings.iconPath + "unrated.png";
 		var starWidth = starIcon.width;
 		var starHeight = starIcon.height;
 		var starSize;
@@ -170,8 +170,8 @@ function Starry (element)
 
 			for (var i = 0; settings.stars > i; i++) {
 				starPosition = i * starSize;
-				greyStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_grey.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
-				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_color.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
+				greyStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "unrated.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
+				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "rated.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
 			}
 
 			width = 100 / settings.stars * settings.startValue;
@@ -200,8 +200,8 @@ function Starry (element)
 
 			for (var i = 0; settings.stars > i; i++) {
 				starPosition = i * starSize;
-				greyStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_grey.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
-				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "star_color.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
+				greyStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "unrated.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
+				coloredStars += "<img class='Starry-star' src='" + starryInfo.url + settings.iconPath + "rated.png' alt='' style='left: " + starPosition + "px; width: " + starSize + "px; height: " + starSize + "px;' />";
 			}
 
 			width = 100 / settings.stars * settings.startValue;
@@ -225,7 +225,7 @@ function Starry (element)
 				}
 
 				starPosition = i * starSize;
-				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + settings.iconPath + "star_hover.png); width: " + starSize + "px; height: " + starSize + "px;'></div>";
+				newCode += "<div class='Starry-star Starry-star-" + elementName + tooltip + "' data-level='" + (settings.stars - i) + "' style='right: " + starPosition + "px; background-image: url(" + starryInfo.url + settings.iconPath + "hover.png); width: " + starSize + "px; height: " + starSize + "px;'></div>";
 			}
 
 			newCode += "</div></div>";
