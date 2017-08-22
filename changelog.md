@@ -1,6 +1,10 @@
 # Changelog
 
-### Version 3.2.0 - 00.00.2016
+### Version 3.2.0 - XX.XX.20XX
+
+- ...
+
+### Version 3.1.3 - 22.08.2017
 
 - New default star icons
 
