@@ -1,8 +1,10 @@
 # Changelog
 
-### Version 4.0.0 - XX.07.2020
+### Version 4.0.0 - 22.07.2020
 
-- ...
+- New options
+- New code
+- New npm module
 
 ### Version 3.1.3 - 22.08.2017
 
