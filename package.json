@@ -18,7 +18,19 @@
 		"type": "git",
 		"url": "git+https://github.com/Teddy95/Starry.git"
 	},
-	"keywords": [],
+	"keywords": [
+		"starry",
+		"star",
+		"star-rating",
+		"starrating",
+		"rating",
+		"javascript",
+		"js",
+		"css",
+		"icons",
+		"cookie",
+		"npm"
+	],
 	"author": "Andre Sieverding",
 	"license": "MIT",
 	"bugs": {
