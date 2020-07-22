@@ -9,10 +9,10 @@
 		"build": "npm run create-module && npm run build:js && npm run build:css && npm run minify:js && npm run minify:css",
 		"create-module": "node createModule.js",
 		"build:js": "babel src/script/Starry.js -o dist/starry.js && babel dist/module.js -o dist/module.js",
-		"build:css": "node-sass src/style/Starry.scss dist/starry.css",
+		"build:css": "sass ./src/style/Starry.scss ./dist/starry.css",
 		"minify:js": "node-minify --compressor uglify-es --input dist/starry.js --output dist/starry.min.js",
 		"minify:css": "node-minify --compressor clean-css --input dist/starry.css --output dist/starry.min.css",
-		"update-docs": "cpy dist/starry.min.js docs && cpy dist/starry.min.css docs"
+		"update-docs": "cpy dist/starry.min.js docs/js && cpy dist/starry.min.css docs/css && sass ./docs/css/style.scss ./docs/css/style.css"
 	},
 	"repository": {
 		"type": "git",

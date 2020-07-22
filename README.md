@@ -1,10 +1,10 @@
 # Starry 🌟🌃💖
 
-[Starry Documentation](https://teddy95.github.io/Starry) (Will be updated soon!)
+[Starry Documentation](https://teddy95.github.io/Starry/v3.1.3) (Will be updated soon!)
 
 ## Installation
 
-Include Starry scripts and stylesheets in your HTML DOM:
+Include Starry scripts and stylesheets in your html DOM:
 
 ```html
 <link rel="stylesheet" type="text/css" href="./dist/starry.min.css" />
@@ -55,7 +55,7 @@ var starRating = new Starry(starRatingEl, {
 | Option              | Type            | Default            | Description                                                   |
 | ------------------- | --------------- | ------------------ | ------------------------------------------------------------- |
 | __name*__           | String          |                    | Name of star rating element.                                  |
-| stars               | Integer         | `5`                | Number of rating stars. (= y)                                 |
+| stars               | Integer         | `5`                | Number of rating stars.                                       |
 | multiRating         | Boolean         | `false`            | Determines whether the user can submit several ratings.       |
 | beginWith           | Float           | `0`                | Preloaded rating in percentage.                               |
 | readOnly            | Boolean         | `false`            | Read only rating stars.                                       |
@@ -64,7 +64,7 @@ var starRating = new Starry(starRatingEl, {
 | labels              | Array / Boolean | `false`            | Labels / tooltips for the stars.                              |
 | onRate              | Function        | `(rating) => true` | Called on rating event.                                       |
 | onClear             | Function        | `undefined`        | Called each time when Starry is being destroyed or rebuilt.   |
-| onRender            | Function        | `undefined`        | Called each time when Starry is build / rendered in HTML DOM. |
+| onRender            | Function        | `undefined`        | Called each time when Starry is build / rendered in html DOM. |
 | __icons*__          | Object          |                    | Icon images.                                                  |
 
 > `*` are required options!
