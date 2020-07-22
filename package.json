@@ -1,9 +1,16 @@
 {
-	"name": "Starry",
-	"version": "4.0.0",
+	"name": "starry-rating",
+	"version": "4.0.0-beta",
 	"description": "JavaScript star rating system",
-	"main": "index.js",
-	"scripts": {},
+	"main": "dist/module.js",
+	"scripts": {
+		"build": "npm run create-module && npm run build:js && npm run build:css && npm run minify:js && npm run minify:css",
+		"create-module": "node createModule.js",
+		"build:js": "babel --presets es2015 src/script/Starry.js -o dist/starry.js && babel --presets es2015 dist/module.js -o dist/module.js",
+		"build:css": "node-sass src/style/Starry.scss dist/starry.css",
+		"minify:js": "",
+		"minify:css": ""
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Teddy95/Starry.git"
@@ -14,5 +21,12 @@
 	"bugs": {
 		"url": "https://github.com/Teddy95/Starry/issues"
 	},
-	"homepage": "https://github.com/Teddy95/Starry#readme"
+	"homepage": "https://github.com/Teddy95/Starry#readme",
+	"devDependencies": {
+		"@babel/core": "^7.10.5",
+		"babel-cli": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"node-sass": "^4.14.1",
+		"sass": "^1.26.10"
+	}
 }

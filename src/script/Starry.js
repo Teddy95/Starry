@@ -29,8 +29,12 @@
 class Starry {
 	// Constructor method -> saves configs to Starry object & calls build method
 	constructor (domElement = false, config = {}) {
-		if (!domElement || !this.setConfig(config)) {
+		if (!domElement) {
 			console.error(`Starry: Missing DOM element!`)
+			return false
+		}
+
+		if (!this.setConfig(config)) {
 			return false
 		}
 
@@ -46,13 +50,14 @@ class Starry {
 		if (typeof this.config.multiRating === 'undefined') this.config.multiRating = false
 		if (typeof this.config.beginWith === 'undefined') this.config.beginWith = 0
 		if (typeof this.config.readOnly === 'undefined') this.config.readOnly = false
-		if (typeof this.config.staticActiveRating === 'undefined') this.config.staticActiveRating = false
-		if (typeof this.config.setStarsAfterRating === 'undefined') this.config.setStarsAfterRating = false
+		if (typeof this.config.staticActiveRating === 'undefined') this.config.staticActiveRating = true
+		if (typeof this.config.setStarsAfterRating === 'undefined') this.config.setStarsAfterRating = true
 		if (typeof this.config.tooltips === 'undefined' || !Array.isArray(this.config.tooltips)) this.config.tooltips = false
 		if (typeof this.config.onRate === 'undefined') this.config.onRate = (value) => {}
 
 		if (this.config.beginWith < 0) this.config.beginWith = 0
 		if (this.config.beginWith > 100) this.config.beginWith = 100
+        this.currentRating = (this.config.beginWith / 100) * this.config.stars
 
 		if (typeof this.config.name === 'undefined') {
 			console.error(`Starry: Give your Starry star rating elements a name!`)
@@ -70,9 +75,34 @@ class Starry {
         return true
 	}
 
+    // Set read only option by cookie
+    checkCookie () {
+        var cookies = document.cookie
+        cookies = cookies.split(';')
+
+        for (var cookie of cookies) {
+            if (cookie.trim() === 'Starry_' + this.config.name + '=true') {
+                this.config.readOnly = true
+            }
+        }
+    }
+
+    // Set rated cookie
+    setCookie () {
+        var time = new Date()
+        time.setTime(time.getTime() + (1000*60*60*24*30*12*10))
+        document.cookie = "Starry_" + this.config.name + "=true; expires=" + time.toGMTString() + "; sameSite=Lax"
+        this.config.multiRating = false
+        this.config.readOnly = true
+    }
+
 	// Create star rating html
 	build () {
 		this.clear()
+
+        if (this.config.multiRating === false) {
+            this.checkCookie()
+        }
 
 		// Build starry wrapper
 		var starryWrapper = document.createElement('div')
@@ -117,6 +147,9 @@ class Starry {
 
 		// Append Starry element to star rating dom element
 		this.domElement.appendChild(starryWrapper)
+
+        // Perform on render method if it exists
+        if (typeof this.config.onRender !== 'undefined' && typeof this.config.onRender === 'function') this.config.onRender()
 	}
 
 	// Get stars html
@@ -131,6 +164,12 @@ class Starry {
 			// Add event listener for hovering stars
 			if (type === 'hover') {
 				starElement.setAttribute('data-value', i)
+
+                if (Array.isArray(this.config.tooltips)) {
+                    starElement.setAttribute('title', this.config.tooltips[i - 1])
+                    starElement.setAttribute('data-tooltip', this.config.tooltips[i - 1])
+                }
+
 				starElement.addEventListener('click', (event) => {
 					var targetEl = event.target
 
@@ -143,10 +182,19 @@ class Starry {
 						value: targetEl.getAttribute('data-value')
 					})
 
-					if (onRateResult !== false && this.config.setStarsAfterRating === true) {
-						this.config.beginWith = (parseInt(targetEl.getAttribute('data-value')) / this.config.stars) * 100
-						this.build()
+					if (onRateResult !== false) {
+                        this.currentRating = targetEl.getAttribute('data-value')
+
+                        if (this.config.setStarsAfterRating === true) {
+                            this.config.beginWith = (parseInt(targetEl.getAttribute('data-value')) / this.config.stars) * 100
+                        }
 					}
+
+                    if (this.config.multiRating === false) {
+                        this.setCookie()
+                    }
+
+                    this.build()
 				})
 			}
 
@@ -162,10 +210,20 @@ class Starry {
 		return stars
 	}
 
-	clear () {
+    // Clear Starry html DOM
+    clear () {
+        if (typeof this.config.onClear !== 'undefined' && typeof this.config.onClear === 'function') this.config.onClear()
 		this.domElement.innerHTML = ''
 	}
-}
 
-// Export Starry class from module
-// module.exports = Starry
+    // Update starry
+    update (config) {
+        this.setConfig(config)
+        this.build()
+    }
+
+    // Get current rating
+    getCurrentRating () {
+        return this.currentRating
+    }
+}
