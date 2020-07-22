@@ -52,20 +52,20 @@ var starRating = new Starry(starRatingEl, {
 
 #### Options
 
-| Option              | Type            | Default           | Description                                                   |
-| ------------------- | --------------- | ----------------- | ------------------------------------------------------------- |
-| __name*__           | String          |                   | Name of star rating element.                                  |
-| stars               | Integer         | `5`               | Number of rating stars. (= y)                                 |
-| multiRating         | Boolean         | `false`           | Determines whether the user can submit several ratings.       |
-| beginWith           | Float           | `0`               | Preloaded rating in percentage.                               |
-| readOnly            | Boolean         | `false`           | Read only rating stars.                                       |
-| staticActiveRating  | Boolean         | `true`            | Show current rating while hovering over rating stars.         |
-| setStarsAfterRating | Boolean         | `true`            | Update rating stars after rating to new value.                |
-| labels              | Array / Boolean | `false`           | Labels / tooltips for the stars.                              |
-| onRate              | Function        | `(value) => true` | Called on rating event.                                       |
-| onClear             | Function        | `undefined`       | Called each time when Starry is being destroyed or rebuilt.   |
-| onRender            | Function        | `undefined`       | Called each time when Starry is build / rendered in HTML DOM. |
-| __icons*__          | Object          |                   | Icon images.                                                  |
+| Option              | Type            | Default            | Description                                                   |
+| ------------------- | --------------- | ------------------ | ------------------------------------------------------------- |
+| __name*__           | String          |                    | Name of star rating element.                                  |
+| stars               | Integer         | `5`                | Number of rating stars. (= y)                                 |
+| multiRating         | Boolean         | `false`            | Determines whether the user can submit several ratings.       |
+| beginWith           | Float           | `0`                | Preloaded rating in percentage.                               |
+| readOnly            | Boolean         | `false`            | Read only rating stars.                                       |
+| staticActiveRating  | Boolean         | `true`             | Show current rating while hovering over rating stars.         |
+| setStarsAfterRating | Boolean         | `true`             | Update rating stars after rating to new value.                |
+| labels              | Array / Boolean | `false`            | Labels / tooltips for the stars.                              |
+| onRate              | Function        | `(rating) => true` | Called on rating event.                                       |
+| onClear             | Function        | `undefined`        | Called each time when Starry is being destroyed or rebuilt.   |
+| onRender            | Function        | `undefined`        | Called each time when Starry is build / rendered in HTML DOM. |
+| __icons*__          | Object          |                    | Icon images.                                                  |
 
 > `*` are required options!
 
