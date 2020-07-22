@@ -8,8 +8,8 @@
 		"create-module": "node createModule.js",
 		"build:js": "babel --presets es2015 src/script/Starry.js -o dist/starry.js && babel --presets es2015 dist/module.js -o dist/module.js",
 		"build:css": "node-sass src/style/Starry.scss dist/starry.css",
-		"minify:js": "",
-		"minify:css": ""
+		"minify:js": "node-minify --compressor uglify-es --input dist/starry.js --output dist/starry.min.js",
+		"minify:css": "node-minify --compressor clean-css --input dist/starry.css --output dist/starry.min.css"
 	},
 	"repository": {
 		"type": "git",
@@ -26,6 +26,7 @@
 		"@babel/core": "^7.10.5",
 		"babel-cli": "^6.26.0",
 		"babel-preset-es2015": "^6.24.1",
+		"node-minify": "^3.6.0",
 		"node-sass": "^4.14.1",
 		"sass": "^1.26.10"
 	}
