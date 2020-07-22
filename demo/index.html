@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Starry Demo</title>
+		<link rel="stylesheet" type="text/css" href="../src/Starry.css">
+	</head>
+	<body>
+		<h1>HTML:</h1>
+		<div id="star-rating-test">
+			<div class="Starry">
+				<div class="Starry-blank">
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/unrated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/unrated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/unrated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/unrated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/unrated.png" alt="" />
+					</div>
+				</div>
+				<!-- <div class="Starry-active Starry-static" data-rating="2.34"> -->
+				<div class="Starry-active" data-rating="2.34">
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/rated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/rated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/rated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/rated.png" alt="" />
+					</div>
+					<div class="Starry-star">
+						<img src="http://teddy95.github.io/Starry/icons/7/rated.png" alt="" />
+					</div>
+				</div>
+				<div class="Starry-hover">
+					<div class="Starry-star" data-value="1">
+						<img src="http://teddy95.github.io/Starry/icons/7/hover.png" alt="" />
+					</div>
+					<div class="Starry-star" data-value="2">
+						<img src="http://teddy95.github.io/Starry/icons/7/hover.png" alt="" />
+					</div>
+					<div class="Starry-star" data-value="3">
+						<img src="http://teddy95.github.io/Starry/icons/7/hover.png" alt="" />
+					</div>
+					<div class="Starry-star" data-value="4">
+						<img src="http://teddy95.github.io/Starry/icons/7/hover.png" alt="" />
+					</div>
+					<div class="Starry-star" data-value="5">
+						<img src="http://teddy95.github.io/Starry/icons/7/hover.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1>Test:</h1>
+		<div id="star-rating"></div>
+		<script type="text/javascript" language="javascript" src="../src/Starry.js"></script>
+		<script type="text/javascript">
+		let starRatringEl = document.getElementById('star-rating')
+		var starRatring = new Starry(starRatringEl, {
+			name: 'test',
+			stars: 5,
+			multiRating: false,
+			beginWith: 20,
+			readOnly: false,
+			staticActiveRating: true,
+			setStarsAfterRating: true,
+			tooltips: false,
+			onRate: (value) => console.log(value),
+			icons: {
+				blank: '../icons/unrated.png',
+				hover: '../icons/hover.png',
+				active: '../icons/rated.png'
+			}
+		})
+		</script>
+	</body>
+</html>

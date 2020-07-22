@@ -1,18 +1,18 @@
 {
-    "name": "Starry",
-    "version": "4.0.0",
-    "description": "JavaScript star rating system",
-    "main": "index.js",
-    "scripts": {},
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Teddy95/Starry.git"
-    },
-    "keywords": [],
-    "author": "Andre Sieverding",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Teddy95/Starry/issues"
-    },
-    "homepage": "https://github.com/Teddy95/Starry#readme"
+	"name": "Starry",
+	"version": "4.0.0",
+	"description": "JavaScript star rating system",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Teddy95/Starry.git"
+	},
+	"keywords": [],
+	"author": "Andre Sieverding",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Teddy95/Starry/issues"
+	},
+	"homepage": "https://github.com/Teddy95/Starry#readme"
 }
