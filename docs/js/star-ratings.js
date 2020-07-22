@@ -20,8 +20,8 @@ var headerStarRating = new Starry(headerStarRatingEl, {
 		});
 	},
 	icons: {
-		blank: './assets/icons/blank@2x.png',
-		hover: './assets/icons/hover@2x.png',
-		active: './assets/icons/active@2x.png'
+		blank: './assets/icons/blank_large.svg',
+		hover: './assets/icons/hover_large.svg',
+		active: './assets/icons/active_large.svg'
 	}
 });
