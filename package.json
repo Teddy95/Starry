@@ -1,6 +1,6 @@
 {
 	"name": "starry-rating",
-	"version": "4.0.0-beta",
+	"version": "4.0.1-beta",
 	"description": "JavaScript star rating system",
 	"main": "dist/module.js",
 	"scripts": {
@@ -42,12 +42,11 @@
 		"@babel/core": "^7.10.5",
 		"@babel/plugin-proposal-object-rest-spread": "^7.10.4",
 		"@babel/preset-env": "^7.10.4",
+		"cpy-cli": "^3.1.1",
+		"http-server": "^0.12.3",
 		"node-minify": "^3.6.0",
 		"node-sass": "^4.14.1",
 		"sass": "^1.26.10"
 	},
-	"dependencies": {
-		"cpy-cli": "^3.1.1",
-		"http-server": "^0.12.3"
-	}
+	"dependencies": {}
 }

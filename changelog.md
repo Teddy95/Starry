@@ -1,6 +1,6 @@
 # Changelog
 
-### Version 4.0.0 - 22.07.2020
+### Version 4.0.0-beta - 22.07.2020
 
 - New options
 - New code
