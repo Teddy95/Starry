@@ -52,8 +52,8 @@ class Starry {
 		if (typeof this.config.readOnly === 'undefined') this.config.readOnly = false
 		if (typeof this.config.staticActiveRating === 'undefined') this.config.staticActiveRating = true
 		if (typeof this.config.setStarsAfterRating === 'undefined') this.config.setStarsAfterRating = true
-		if (typeof this.config.tooltips === 'undefined' || !Array.isArray(this.config.tooltips)) this.config.tooltips = false
-		if (typeof this.config.onRate === 'undefined') this.config.onRate = (value) => {}
+		if (typeof this.config.labels === 'undefined' || !Array.isArray(this.config.labels)) this.config.labels = false
+		if (typeof this.config.onRate === 'undefined') this.config.onRate = (value) => true
 
 		if (this.config.beginWith < 0) this.config.beginWith = 0
 		if (this.config.beginWith > 100) this.config.beginWith = 100
@@ -165,9 +165,10 @@ class Starry {
 			if (type === 'hover') {
 				starElement.setAttribute('data-value', i)
 
-                if (Array.isArray(this.config.tooltips)) {
-                    starElement.setAttribute('title', this.config.tooltips[i - 1])
-                    starElement.setAttribute('data-tooltip', this.config.tooltips[i - 1])
+                if (Array.isArray(this.config.labels)) {
+                    starElement.setAttribute('title', this.config.labels[i - 1])
+                    starElement.setAttribute('data-label', this.config.labels[i - 1])
+                    starElement.setAttribute('data-tooltip', this.config.labels[i - 1])
                 }
 
 				starElement.addEventListener('click', (event) => {
@@ -218,7 +219,7 @@ class Starry {
 
     // Update starry
     update (config) {
-        this.setConfig(config)
+        this.setConfig(Object.assign({}, this.config, config))
         this.build()
     }
 

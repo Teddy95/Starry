@@ -1,92 +1,103 @@
-# Starry
+# Starry 🌟🌃💖
 
-<p align="center">
-	<img src="http://root.andre-sieverding.de/briefkasten/GithubRepoLogos/Starry2.png" alt="">
-	<br />
-	<span align="center">Starry is a JavaScript star rating system based on Ajax. <a href="http://teddy95.github.io/Starry/">Demo</a></span>
-</p>
+[Starry Documentation](https://teddy95.github.io/Starry) (Will be updated soon!)
 
--------------
+## Installation
 
-### Installation
+Include Starry scripts and stylesheets in your HTML DOM:
 
-> You need [jQuery](https://github.com/jquery/jquery) version 1.11.0 or higher!
-
-HTML markup:
 ```html
-<div id="starry" name="starry"></div>
+<link rel="stylesheet" type="text/css" href="./dist/starry.min.css" />
 ```
-JavaScript markup:
+
+```html
+<script type='text/javascript' language='javascript' src='./dist/starry.min.js'></script>
+```
+
+Or install Starry as a Node dependency:
+
+```bash
+$ npm install starry-rating
+```
+
 ```javascript
-$(document).ready(function () {
-	var starry = new Starry('#starry');
-	starry.init({
-		success: function (level) {
-			alert('You voted: ' + level);
-		}
-	});
+import Starry from 'starry-rating'
+
+// or with require...
+const Starry = require('starry-rating')
+```
+
+## How to use
+
+### HTML markup
+
+```html
+<!-- Use a simple div container which is selectable by id or class -->
+<div id="star-rating"></div>
+```
+
+### JavaScript API
+
+```javascript
+var starRatingEl = document.getElementById('star-rating');
+var starRating = new Starry(starRatingEl, {
+	name: 'star-rating',
+	icons: {
+		blank: './icons/blank.png',
+		hover: './icons/hover.png',
+		active: './icons/active.png'
+	}
 });
 ```
 
--------------
+#### Options
 
-### Options
+| Option              | Type            | Default           | Description                                                   |
+| ------------------- | --------------- | ----------------- | ------------------------------------------------------------- |
+| __name*__           | String          |                   | Name of star rating element.                                  |
+| stars               | Integer         | `5`               | Number of rating stars. (= y)                                 |
+| multiRating         | Boolean         | `false`           | Determines whether the user can submit several ratings.       |
+| beginWith           | Float           | `0`               | Preloaded rating in percentage.                               |
+| readOnly            | Boolean         | `false`           | Read only rating stars.                                       |
+| staticActiveRating  | Boolean         | `true`            | Show current rating while hovering over rating stars.         |
+| setStarsAfterRating | Boolean         | `true`            | Update rating stars after rating to new value.                |
+| labels              | Array / Boolean | `false`           | Labels / tooltips for the stars.                              |
+| onRate              | Function        | `(value) => true` | Called on rating event.                                       |
+| onClear             | Function        | `undefined`       | Called each time when Starry is being destroyed or rebuilt.   |
+| onRender            | Function        | `undefined`       | Called each time when Starry is build / rendered in HTML DOM. |
+| __icons*__          | Object          |                   | Icon images.                                                  |
 
-| Option | Type | Default | Description | 
-|:----- |:----- |:----- |:----- |
-| stars | int | 5 | Number of rating stars. (= y) | 
-| starSize | int | 32 | Height and width of star icons in pixel. | 
-| multiple | boolean | false | Determines whether the user can submit several ratings. | 
-| startValue | int | 0 | Preloaded rating. <code>{x ∈ ℝ<sub>+</sub> ¦ x <= y}</code> | 
-| readOnly | boolean | false | Determines whether the user can submit ratings. | 
-| iconPath | string | `icons/` | Path to rating icons. | 
-| tooltips | array | false | Tooltips for the stars. (You must include [tipsy](https://github.com/jaz303/tipsy)!) | 
-| success | function | false | A function to be called if the request succeeds. The function gets passed one argument: Your rating (3 for example). | 
+> `*` are required options!
 
--------------
+#### Methods
 
-### Browser support
+##### Get current rating `getCurrentRating()`
 
-| Browser | Version | 
-|:-----:|:----- |
-| ![](http://www.w3schools.com/images/compatible_ie.gif) | 9 or higher | 
-| ![](http://www.w3schools.com/images/compatible_chrome.gif) | Works! Tested in version 35 | 
-| ![](http://www.w3schools.com/images/compatible_firefox.gif) | Works! Tested in version 29 | 
-| ![](http://www.w3schools.com/images/compatible_safari.gif) | Works! Tested in version 11 | 
-| ![](http://www.w3schools.com/images/compatible_opera.gif) | Not tested - [Tell us!](https://github.com/Teddy95/Starry/issues) | 
+```javascript
+console.log(starRating.getCurrentRating())
+```
 
--------------
+##### Destroy starry `clear()`
 
-### Icons (Stars)
+```javascript
+starRating.clear()
+```
 
-These are the default icons:
+##### Update Starry with new configurations `update()`
 
-![unrated](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/5/32px/unrated.png) ![rated](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/5/32px/rated.png) ![hover](https://raw.githubusercontent.com/Teddy95/Starry/icons/stars/5/32px/hover.png)
+Starry will merge the new configurations with the old ones.
 
-More icons can be found [here](https://github.com/Teddy95/Starry/tree/icons).
+```javascript
+starRating.update({
+	readOnly: true,
+	beginWith: 50
+})
+```
 
--------------
+## Cookies
 
-### Cookies
+Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings! 🍪
 
-Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings! :cookie:
+## License
 
--------------
-
-### Download
-
-- [Releases on Github](https://github.com/Teddy95/Starry/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Starry/archive/v3.1.2.zip)**
-- [Download master from Github](https://github.com/Teddy95/Starry/archive/master.zip)
-
--------------
-
-### Contributors
-
-- [Teddy95](https://github.com/Teddy95)
-
--------------
-
-### License
-
-The MIT License (MIT) - [View LICENSE.md](https://github.com/Teddy95/Starry/blob/master/LICENSE.md)
+The MIT License (MIT) - [View LICENSE.md](LICENSE.md)
