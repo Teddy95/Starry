@@ -1,6 +1,6 @@
 # Changelog
 
-### Version 3.2.0 - XX.XX.20XX
+### Version 4.0.0 - XX.07.2020
 
 - ...
 
