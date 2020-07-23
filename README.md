@@ -1,5 +1,7 @@
 # Starry 🌟🌃💖
 
+![Screenshot](docs/assets/screenshot.png)
+
 [Starry Documentation](https://teddy95.github.io/Starry/v3.1.3) (Will be updated soon!)
 
 ## Installation
