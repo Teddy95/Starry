@@ -87,8 +87,7 @@ h2 > small {
 .head {
 	min-height: 40vh;
 	width: 100%;
-	background: url(../assets/background_image.jpg) center center;
-	background-size: cover;
+	background-image: radial-gradient(at 70% 40px, #113745, #09232d, #04151c);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -97,17 +96,6 @@ h2 > small {
 	text-shadow: 0 -1px 0 rgba($black, 0.3);
 	position: relative;
 	padding: 0 20px 20px 20px;
-}
-
-.head:after {
-	content: "";
-	position: absolute;
-	bottom: -1px;
-	left: 0;
-	right: 0;
-	height: 11px;
-	width: 100%;
-	background: url(../assets/galactic-wave-bottom.png) bottom left repeat;
 }
 
 .head > .menu {
@@ -292,17 +280,6 @@ footer {
 	min-height: 150px;
 	width: 100%;
 	background-image: linear-gradient(177deg, $primaryColor 0%, darken($primaryColor, 22%) 100%);
-}
-
-footer:before {
-	content: "";
-	position: absolute;
-	top: -1px;
-	left: 0;
-	right: 0;
-	height: 11px;
-	width: 100%;
-	background: url(../assets/galactic-wave-top.png) top left repeat;
 }
 
 .footer {

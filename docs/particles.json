@@ -1,7 +1,7 @@
 {
     "particles": {
         "number": {
-            "value": 104,
+            "value": 150,
             "density": {
                 "enable": true,
                 "value_area": 2051.7879161528977
@@ -20,7 +20,7 @@
                 "nb_sides": 5
             },
             "image": {
-                "src": "./assets/icons/hover.png",
+                "src": "./assets/icons/hover_large.png",
                 "width": 32,
                 "height": 32
             }
@@ -36,7 +36,7 @@
             }
         },
         "size": {
-            "value": 2,
+            "value": 4,
             "random": true,
             "anim": {
                 "enable": false,
@@ -54,7 +54,7 @@
         },
         "move": {
             "enable": true,
-            "speed": 6,
+            "speed": 0.5,
             "direction": "none",
             "random": false,
             "straight": false,
