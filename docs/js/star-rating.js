@@ -3,6 +3,7 @@ var headerStarRating = new Starry(headerStarRatingEl, {
 	name: 'Starry',
 	multiRating: true,
 	beginWith: 100,
+	staticActiveRating: false,
 	labels: [
 		'Low',
 		'Nice to have',
