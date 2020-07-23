@@ -79,7 +79,7 @@ var starRating = new Starry(starRatingEl, {
 console.log(starRating.getCurrentRating())
 ```
 
-##### Destroy starry `clear()`
+##### Destroy Starry `clear()`
 
 ```javascript
 starRating.clear()
@@ -87,7 +87,7 @@ starRating.clear()
 
 ##### Update Starry with new configurations `update()`
 
-Starry will merge the new configurations with the old ones.
+Starry will merge the new configurations into the old ones.
 
 ```javascript
 starRating.update({

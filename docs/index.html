@@ -231,11 +231,47 @@ var starRating = new Starry(starRatingEl, {
 				</table>
 			</div>
 
+			<p class="notice">
+				<span class="info-icon">*</span> are required options!
+			</p>
+
 			<br />
 
 			<h1>
 				<p>Methods</p>
 			</h1>
+
+			<h2>
+				<p>Get current rating <code>getCurrentRating()</code></p>
+			</h2>
+
+			<pre><code class="javascript">
+console.log(starRating.getCurrentRating()) // =&#x3E; 5 i.e.
+			</code></pre>
+
+			<br />
+
+			<h2>
+				<p>Destroy Starry <code>clear()</code></p>
+			</h2>
+
+			<pre><code class="javascript">
+starRating.clear()
+			</code></pre>
+
+			<br />
+
+			<h2>
+				<p>Update Starry with new configurations <code>update()</code></p>
+				<small>Starry will merge the new configurations into the old ones.</small>
+			</h2>
+
+			<pre><code class="javascript">
+starRating.update({
+&#x9;readOnly: true,
+&#x9;beginWith: 50
+})
+			</code></pre>
 		</div>
 		<footer>
 			<div class="footer">
@@ -248,7 +284,7 @@ var starRating = new Starry(starRatingEl, {
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" language="javascript"></script>
 		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" language="javascript"></script>
 		<script src="./js/starry.min.js" type="text/javascript" language="javascript"></script>
-		<script src="./js/star-ratings.js" type="text/javascript" language="javascript"></script>
+		<script src="./js/star-rating.js" type="text/javascript" language="javascript"></script>
 		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" type="text/javascript" language="javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" type="text/javascript" language="javascript"></script>
 		<script type="text/javascript" language="javascript">

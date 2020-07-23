@@ -85,7 +85,7 @@ h2 > small {
 }
 
 .head {
-	min-height: 60vh;
+	min-height: 40vh;
 	width: 100%;
 	background: url(../assets/background_image.jpg) center center;
 	background-size: cover;
@@ -235,40 +235,56 @@ h2 > small {
 	padding: 70px;
 }
 
-.content > .icon-preview {
-	width: 170px;
-	margin: 20px;
-	padding: 10px 5px 5px 5px;
-	text-align: center;
-	border: 1px solid $lightGray;
-	border-radius: 10px;
+.content table {
+	text-align: left;
+	border-collapse: collapse;
 }
 
-.content > .icon-preview:hover {
-	border: 1px solid $lightGray;
-	background-color: $primaryColor;
+.content table th,
+.content table td {
+	border: 1px solid #666666;
+	padding: 10px;
+}
+
+.content table > thead > tr {
+	background-image: linear-gradient(177deg, $primaryColor 0%, darken($primaryColor, 22%) 100%);
 	color: $white;
-	cursor: pointer;
-	box-shadow: 0 0 0 5px rgba($primaryColor, 0.2);
 }
 
-.content > .icon-preview > div:first-child {
-	font-size: 65px;
-	padding: 10px;
+.content table > tbody > tr:nth-child(even) {
+	background-color: lighten($primaryColor, 37%);
 }
 
-.content > .icon-preview > div:last-child {
-	padding: 10px;
-}
-
-.content > .icon-preview > div > code {
-	padding: 5px 7px;
-	border-radius: 5px;
-	background-color: $white;
-	color: $primaryColor;
-	cursor: default;
-	font-size: 15px;
+.content table code {
+	padding: 7px 10px;
+	border-radius: 10px;
+	font-family: monospace, monospace;
+	background-color: #444444;
 	display: inline-block;
+	color: $white;
+	font-size: 15px;
+}
+
+.content h2 code {
+	padding: 2px 5px;
+	border-radius: 5px;
+	font-family: monospace, monospace;
+	background-color: lighten($primaryColor, 37%);
+	display: inline-block;
+	color: lighten($black, 37%);
+}
+
+.content .notice {
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.content .notice > .info-icon {
+	border-radius: 10px;
+	background-color: $primaryColor;
+	padding: 6px 9px;
+	color: $white;
+	font-size: 20px;
 }
 
 footer {

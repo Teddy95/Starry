@@ -164,7 +164,7 @@ h2 > small {
 }
 
 .head {
-  min-height: 60vh;
+  min-height: 40vh;
   width: 100%;
   background: url(../assets/background_image.jpg) center center;
   background-size: cover;
@@ -314,40 +314,56 @@ h2 > small {
   padding: 70px;
 }
 
-.content > .icon-preview {
-  width: 170px;
-  margin: 20px;
-  padding: 10px 5px 5px 5px;
-  text-align: center;
-  border: 1px solid #f1f1f1;
-  border-radius: 10px;
+.content table {
+  text-align: left;
+  border-collapse: collapse;
 }
 
-.content > .icon-preview:hover {
-  border: 1px solid #f1f1f1;
-  background-color: #3D7EF0;
+.content table th,
+.content table td {
+  border: 1px solid #666666;
+  padding: 10px;
+}
+
+.content table > thead > tr {
+  background-image: linear-gradient(177deg, #3D7EF0 0%, #0e48af 100%);
   color: #ffffff;
-  cursor: pointer;
-  box-shadow: 0 0 0 5px rgba(61, 126, 240, 0.2);
 }
 
-.content > .icon-preview > div:first-child {
-  font-size: 65px;
-  padding: 10px;
+.content table > tbody > tr:nth-child(even) {
+  background-color: #ecf2fe;
 }
 
-.content > .icon-preview > div:last-child {
-  padding: 10px;
-}
-
-.content > .icon-preview > div > code {
-  padding: 5px 7px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  color: #3D7EF0;
-  cursor: default;
-  font-size: 15px;
+.content table code {
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-family: monospace, monospace;
+  background-color: #444444;
   display: inline-block;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.content h2 code {
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-family: monospace, monospace;
+  background-color: #ecf2fe;
+  display: inline-block;
+  color: #5e5e5e;
+}
+
+.content .notice {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.content .notice > .info-icon {
+  border-radius: 10px;
+  background-color: #3D7EF0;
+  padding: 6px 9px;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 footer {
