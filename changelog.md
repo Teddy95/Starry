@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 4.0.1 - 23.07.2020
+
+- Documentation updates
+
 ### Version 4.0.0-beta - 22.07.2020
 
 - New options
