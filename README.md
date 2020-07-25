@@ -113,7 +113,7 @@ console.log(starRating.getCurrentRating())
 starRating.clear()
 ```
 
-##### Update Starry with new configurations `update()`
+##### Update Starry with new configurations `update(config)`
 
 Starry will merge the new configurations into the old ones.
 
@@ -123,6 +123,24 @@ starRating.update({
 	beginWith: 50
 })
 ```
+
+##### Attach event listener `on(eventName, callbackFunction)`
+
+Attach an event listener to the star rating.
+
+```javascript
+starRating.on('rate', function (rating) {
+	console.log('Rating: ' + rating)
+})
+```
+
+#### Events
+
+| Name   | Arguments | Description          |
+| ------ | --------- | -------------------- |
+| rate   | `rating`  | Fired on rating.     |
+| render |           | Fired on rendering.  |
+| clear  |           | Fired on destroying. |
 
 ## Cookies
 
