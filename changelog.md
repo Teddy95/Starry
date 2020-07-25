@@ -1,5 +1,11 @@
 # Changelog
 
+### Version 5.0.0 - 25.07.2020
+
+- `name` and `icons` are no longer required configurations.
+- Default value of `multiRating` configuration is now `true`.
+- `getCurrentRating()` method now returns `0` instead of `beginWith` value, if there is no user rating yet.
+
 ### Version 4.0.1 - 23.07.2020
 
 - Documentation updates
@@ -11,6 +17,8 @@
 - New npm module
 
 ### Version 3.1.3 - 22.08.2017
+
+[Starry v3.1.3 Documentation](https://teddy95.github.io/Starry/v3.1.3)
 
 - New default star icons
 
