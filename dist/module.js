@@ -66,7 +66,7 @@ var Starry = /*#__PURE__*/function () {
     value: function setConfig(config) {
       this.config = config;
       if (typeof this.config.stars === 'undefined') this.config.stars = 5;
-      if (typeof this.config.multiRating === 'undefined') this.config.multiRating = false;
+      if (typeof this.config.multiRating === 'undefined') this.config.multiRating = true;
       if (typeof this.config.beginWith === 'undefined') this.config.beginWith = 0;
       if (typeof this.config.readOnly === 'undefined') this.config.readOnly = false;
       if (typeof this.config.staticActiveRating === 'undefined') this.config.staticActiveRating = true;
@@ -75,12 +75,12 @@ var Starry = /*#__PURE__*/function () {
       if (typeof this.config.onRate === 'undefined') this.config.onRate = function (value) {
         return true;
       };
+      if (typeof this.currentRating === 'undefined') this.currentRating = 0;
       if (this.config.beginWith < 0) this.config.beginWith = 0;
       if (this.config.beginWith > 100) this.config.beginWith = 100;
-      this.currentRating = this.config.beginWith / 100 * this.config.stars;
 
-      if (typeof this.config.name === 'undefined') {
-        console.error("Starry: Give your Starry star rating elements a name!");
+      if (this.config.multiRating === false && typeof this.config.name === 'undefined') {
+        console.error("Starry: Give your Starry star rating elements with multi rating a name!");
         return false;
       }
 
@@ -235,16 +235,13 @@ var Starry = /*#__PURE__*/function () {
               targetEl = event.target.closest('.Starry-star');
             }
 
-            var onRateResult = _this.config.onRate({
-              name: _this.config.name,
-              value: targetEl.getAttribute('data-value')
-            });
+            var onRateResult = _this.config.onRate(targetEl.getAttribute('data-value'));
 
             if (onRateResult !== false) {
-              _this.currentRating = targetEl.getAttribute('data-value');
+              _this.currentRating = parseInt(targetEl.getAttribute('data-value'));
 
               if (_this.config.setStarsAfterRating === true) {
-                _this.config.beginWith = parseInt(targetEl.getAttribute('data-value')) / _this.config.stars * 100;
+                _this.config.beginWith = _this.currentRating / _this.config.stars * 100;
               }
             }
 
