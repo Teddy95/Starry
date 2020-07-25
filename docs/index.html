@@ -19,7 +19,7 @@
 			<div class="menu">
 				<ul>
 					<li>
-						<a href="./playgound.html" class="smooth"><i class="px px-beaker"></i> Playgound</a>
+						<a href="./playground.html" class="smooth"><i class="px px-beaker"></i> Playground</a>
 					</li>
 					<li>
 						<a href="https://github.com/Teddy95/Starry/releases/latest" class="smooth"><i class="px px-cloud-download"></i> Download</a>
@@ -141,7 +141,7 @@ var starRating = new Starry(starRatingEl, {
 
 			<h1>
 				<p>Configurations</p>
-				<small>Try out our awesome <a class="smooth" href="./playgound.html">Starry playgound configurator</a>!</small>
+				<small>Try out our awesome <a class="smooth" href="./playground.html">Starry playground configurator</a>!</small>
 			</h1>
 
 			<div>
@@ -156,10 +156,10 @@ var starRating = new Starry(starRatingEl, {
 					</thead>
 					<tbody>
 						<tr>
-							<td><strong>name*</strong></td>
+							<td>name</td>
 							<td>String</td>
 							<td></td>
-							<td>Name of star rating element.</td>
+							<td>Name of star rating element. This option is required, if multi rating is enabled.</td>
 						</tr>
 						<tr>
 							<td>stars</td>
@@ -170,7 +170,7 @@ var starRating = new Starry(starRatingEl, {
 						<tr>
 							<td>multiRating</td>
 							<td>Boolean</td>
-							<td><code>false</code></td>
+							<td><code>true</code></td>
 							<td>Determines whether the user can submit several ratings.</td>
 						</tr>
 						<tr>

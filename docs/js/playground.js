@@ -1,6 +1,6 @@
 var headerStarRatingEl = document.getElementById('Starry');
 var headerStarRating = new Starry(headerStarRatingEl, {
-	name: 'Starry',
+	name: 'StarryPlayground',
 	stars: 10,
 	multiRating: true,
 	beginWith: 66,

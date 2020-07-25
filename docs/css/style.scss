@@ -231,8 +231,15 @@ h2 > small {
 
 .content table th,
 .content table td {
-	border: 1px solid #666666;
 	padding: 10px;
+}
+
+.content table th {
+	border: 1px solid #0f3f94;
+}
+
+.content table td {
+	border: 1px solid #666666;
 }
 
 .content table > thead > tr {
