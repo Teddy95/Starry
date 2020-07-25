@@ -69,9 +69,13 @@ class Starry {
 		if (this.config.beginWith < 0) this.config.beginWith = 0
 		if (this.config.beginWith > 100) this.config.beginWith = 100
 
-		if (this.config.multiRating === false && typeof this.config.name === 'undefined') {
-			console.error(`Starry: Give your Starry star rating elements with multi rating a name!`)
-			return false
+		if (typeof this.config.name === 'undefined') {
+            if (this.config.multiRating === false) {
+                console.error(`Starry: Give your Starry star rating elements with multi rating a name!`)
+    			return false
+            } else {
+                this.config.name = 'Starry_' + Date.now()
+            }
 		}
 
         return true
