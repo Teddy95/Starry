@@ -25,6 +25,9 @@
  * SOFTWARE.
  */
 
+// Import default icons
+import icon from './icons.json'
+
 // Star rating class
 class Starry {
 	// Constructor method -> saves configs to Starry object & calls build method
@@ -56,19 +59,18 @@ class Starry {
 		if (typeof this.config.onRate === 'undefined') this.config.onRate = (value) => true
         if (typeof this.currentRating === 'undefined') this.currentRating = 0
 
+		if (typeof this.config.icons === 'undefined' ||
+			typeof this.config.icons.blank === 'undefined' ||
+			typeof this.config.icons.hover === 'undefined' ||
+			typeof this.config.icons.active === 'undefined') {
+			this.config.icons = icon
+		}
+
 		if (this.config.beginWith < 0) this.config.beginWith = 0
 		if (this.config.beginWith > 100) this.config.beginWith = 100
 
 		if (this.config.multiRating === false && typeof this.config.name === 'undefined') {
 			console.error(`Starry: Give your Starry star rating elements with multi rating a name!`)
-			return false
-		}
-
-		if (typeof this.config.icons === 'undefined' ||
-			typeof this.config.icons.blank === 'undefined' ||
-			typeof this.config.icons.hover === 'undefined' ||
-			typeof this.config.icons.active === 'undefined') {
-			console.error(`Starry: No star icons defined yet!`)
 			return false
 		}
 
