@@ -292,6 +292,12 @@ var Starry = /*#__PURE__*/function () {
     key: "getCurrentRating",
     value: function getCurrentRating() {
       return this.currentRating;
+    } // Get config object
+
+  }, {
+    key: "getConfig",
+    value: function getConfig() {
+      return this.config;
     }
   }]);
 
