@@ -12,7 +12,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/ocean.min.css" rel="stylesheet" />
-        <link rel="shortcut icon" href="./assets/star.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="./assets/icons/hover_large.svg" type="image/svg+xml" />
 	</head>
 	<body>
 		<div id="particles-js" class="head">
@@ -127,14 +127,8 @@ const Starry = require('starry-rating')
 
 			<pre><code class="javascript">
 var starRatingEl = document.getElementById(&apos;star-rating&apos;);
-var starRating = new Starry(starRatingEl, {
-&#x9;name: &apos;star-rating&apos;,
-&#x9;icons: {
-&#x9;&#x9;blank: &apos;./icons/blank.svg&apos;,
-&#x9;&#x9;hover: &apos;./icons/hover.svg&apos;,
-&#x9;&#x9;active: &apos;./icons/active.svg&apos;
-&#x9;}
-});
+const starRatingConfig = {};
+var starRating = new Starry(starRatingEl, starRatingConfig);
 			</code></pre>
 
 			<br />
@@ -222,18 +216,18 @@ var starRating = new Starry(starRatingEl, {
 							<td>Called each time when Starry is build / rendered in html DOM.</td>
 						</tr>
 						<tr>
-							<td><strong>icons*</strong></td>
+							<td>icons</td>
 							<td>Object</td>
-							<td></td>
-							<td>Icon images.</td>
+							<td>Default <a class="smooth" href="https://github.com/Teddy95/Starry/tree/master/dist/icons" target="_blank">Starry icons</a>.</td>
+							<td>Icon images. Object with properties `blank`, `active` and `hover`. Use a string for each image source.</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 
-			<p class="notice">
+			<!-- <p class="notice">
 				<span class="info-icon">*</span> are required options!
-			</p>
+			</p> -->
 
 			<br />
 
