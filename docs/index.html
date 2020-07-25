@@ -134,6 +134,44 @@ const starRatingConfig = {};
 var starRating = new Starry(starRatingEl, starRatingConfig);
 			</code></pre>
 
+			<h2>
+				<p>More complex example</p>
+				<small>More complex example of a star rating with tooltips and custom icons, which is logging the rating to console. Tooltips have to be rendered in <code>onRender()</code> method by any tooltip library. In this example we use Bootstrap tooltips with jQuery & Popper.js.</small>
+			</h2>
+
+			<pre><code class="javascript">
+var starRatingId = &#x27;ExampleRating&#x27;; // Html DOM id + star rating element name
+var starRatingEl = document.getElementById(starRatingId);
+var starRating = new Starry(starRatingEl, {
+&#x9;name: starRatingId, // Use a name to determine tooltips for only this Starry element
+&#x9;labels: [
+&#x9;&#x9;&#x27;Low&#x27;,
+&#x9;&#x9;&#x27;Nice to have&#x27;,
+&#x9;&#x9;&#x27;Very nice&#x27;,
+&#x9;&#x9;&#x27;Perfect&#x27;,
+&#x9;&#x9;&#x27;Excellent&#x27;
+&#x9;],
+&#x9;onClear: function () {
+&#x9;&#x9;$(&#x27;[data-name=&#x22;&#x27; + starRatingId + &#x27;&#x22;] [data-tooltip]&#x27;).tooltip(&#x27;dispose&#x27;);
+&#x9;},
+&#x9;onRender: function () {
+&#x9;&#x9;$(&#x27;[data-name=&#x22;&#x27; + starRatingId + &#x27;&#x22;] [data-tooltip]&#x27;).tooltip({
+&#x9;&#x9;&#x9;trigger: &#x27;hover&#x27;,
+&#x9;&#x9;&#x9;placement: &#x27;top&#x27;
+&#x9;&#x9;});
+&#x9;},
+&#x9;onRate: function (rating) {
+&#x9;&#x9;console.log(rating)
+&#x9;},
+&#x9;icons: {
+&#x9;&#x9;// File path, uri or base64 string for `src` attribute
+&#x9;&#x9;blank: &#x27;./dist/icons/blank.svg&#x27;,
+&#x9;&#x9;hover: &#x27;./dist/icons/hover.svg&#x27;,
+&#x9;&#x9;active: &#x27;./dist/icons/active.svg&#x27;
+&#x9;}
+});
+			</code></pre>
+
 			<br />
 
 			<h1>
