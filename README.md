@@ -45,6 +45,43 @@ var starRatingEl = document.getElementById('star-rating');
 var starRating = new Starry(starRatingEl);
 ```
 
+#### More complex example
+
+More complex example of a star rating with tooltips and custom icons, which is logging the rating to console. Tooltips have to be rendered in ```onRender()``` method by any tooltip library. In this example we use Bootstrap tooltips with jQuery & Popper.js.
+
+```javascript
+var starRatingId = 'ExampleRating'; // Html DOM id + star rating element name
+var starRatingEl = document.getElementById(starRatingId);
+var starRating = new Starry(starRatingEl, {
+	name: starRatingId, // Use a name to determine tooltips for only this Starry element
+	labels: [
+		'Low',
+		'Nice to have',
+		'Very nice',
+		'Perfect',
+		'Excellent'
+	],
+	onClear: function () {
+		$('[data-name="' + starRatingId + '"] [data-tooltip]').tooltip('dispose');
+	},
+	onRender: function () {
+		$('[data-name="' + starRatingId + '"] [data-tooltip]').tooltip({
+			trigger: 'hover',
+			placement: 'top'
+		});
+	},
+	onRate: function (rating) {
+		console.log(rating)
+	},
+	icons: {
+		// File path, uri or base64 string for `src` attribute
+		blank: './dist/icons/blank.svg',
+		hover: './dist/icons/hover.svg',
+		active: './dist/icons/active.svg'
+	}
+});
+```
+
 #### Options
 
 | Option              | Type            | Default                         | Description                                                                                            |
