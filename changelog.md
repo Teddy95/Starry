@@ -1,5 +1,9 @@
 # Changelog
 
+### Version 5.1.0 - 25.07.2020
+
+- You can use the `on` method now to attach callback function to Starry events.
+
 ### Version 5.0.0 - 25.07.2020
 
 - `name` and `icons` are no longer required configurations.
