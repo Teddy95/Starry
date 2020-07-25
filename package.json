@@ -1,6 +1,6 @@
 {
 	"name": "starry-rating",
-	"version": "4.0.1",
+	"version": "4.1.0",
 	"description": "JavaScript star rating system",
 	"main": "dist/module.js",
 	"scripts": {
