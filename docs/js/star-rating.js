@@ -26,3 +26,7 @@ var headerStarRating = new Starry(headerStarRatingEl, {
 		active: './assets/icons/active_large.svg'
 	}
 });
+
+headerStarRating.on('rate', function (rating) {
+	console.log('Rating: ' + rating)
+})

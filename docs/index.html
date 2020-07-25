@@ -124,6 +124,8 @@ const Starry = require('starry-rating')
 &lt;div id=&quot;star-rating&quot;&gt;&lt;/div&gt;
 			</code></pre>
 
+			<br />
+
 			<h2>
 				<p>JavaScript</p>
 			</h2>
@@ -132,6 +134,8 @@ const Starry = require('starry-rating')
 var starRatingEl = document.getElementById(&apos;star-rating&apos;);
 var starRating = new Starry(starRatingEl);
 			</code></pre>
+
+			<br />
 
 			<h2>
 				<p>More complex example</p>
@@ -296,7 +300,7 @@ starRating.clear()
 			<br />
 
 			<h2>
-				<p>Update Starry with new configurations <code>update()</code></p>
+				<p>Update Starry with new configurations <code>update(config)</code></p>
 				<small>Starry will merge the new configurations into the old ones.</small>
 			</h2>
 
@@ -306,6 +310,54 @@ starRating.update({
 &#x9;beginWith: 50
 })
 			</code></pre>
+
+			<br />
+
+			<h2>
+				<p>Attach event listener <code>on(eventName, callbackFunction)</code></p>
+				<small>Attach an event listener to the star rating.</small>
+			</h2>
+
+			<pre><code class="javascript">
+starRating.on(&#x27;rate&#x27;, function (rating) {
+&#x9;console.log(&#x27;Rating: &#x27; + rating)
+})
+			</code></pre>
+
+			<br />
+
+			<h1>
+				<p>Events</p>
+			</h1>
+
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Arguments</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>rate</td>
+							<td><code>rating</code></td>
+							<td>Fired on rating.</td>
+						</tr>
+						<tr>
+							<td>render</td>
+							<td></td>
+							<td>Fired on rendering.</td>
+						</tr>
+						<tr>
+							<td>clear</td>
+							<td></td>
+							<td>Fired on destroying.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<footer>
 			<div class="footer">
