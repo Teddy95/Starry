@@ -230,4 +230,9 @@ class Starry {
     getCurrentRating () {
         return this.currentRating
     }
+
+    // Get config object
+    getConfig () {
+        return this.config
+    }
 }
