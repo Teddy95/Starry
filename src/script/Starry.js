@@ -235,4 +235,25 @@ class Starry {
     getConfig () {
         return this.config
     }
+
+    // Custom event listener
+    on (eventName, callbackFunction) {
+        switch (eventName) {
+            case 'rate':
+                this.config.onRate = callbackFunction
+                break
+
+            case 'render':
+                this.config.onRender = callbackFunction
+                break
+
+            case 'clear':
+                this.config.onClear = callbackFunction
+                break
+
+            default:
+                console.error(`Starry: Event '${eventName}' doesn't exists!`)
+                return
+        }
+    }
 }
