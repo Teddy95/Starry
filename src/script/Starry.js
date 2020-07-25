@@ -47,20 +47,20 @@ class Starry {
 		this.config = config
 
 		if (typeof this.config.stars === 'undefined') this.config.stars = 5
-		if (typeof this.config.multiRating === 'undefined') this.config.multiRating = false
+		if (typeof this.config.multiRating === 'undefined') this.config.multiRating = true
 		if (typeof this.config.beginWith === 'undefined') this.config.beginWith = 0
 		if (typeof this.config.readOnly === 'undefined') this.config.readOnly = false
 		if (typeof this.config.staticActiveRating === 'undefined') this.config.staticActiveRating = true
 		if (typeof this.config.setStarsAfterRating === 'undefined') this.config.setStarsAfterRating = true
 		if (typeof this.config.labels === 'undefined' || !Array.isArray(this.config.labels)) this.config.labels = false
 		if (typeof this.config.onRate === 'undefined') this.config.onRate = (value) => true
+        if (typeof this.currentRating === 'undefined') this.currentRating = 0
 
 		if (this.config.beginWith < 0) this.config.beginWith = 0
 		if (this.config.beginWith > 100) this.config.beginWith = 100
-        this.currentRating = (this.config.beginWith / 100) * this.config.stars
 
-		if (typeof this.config.name === 'undefined') {
-			console.error(`Starry: Give your Starry star rating elements a name!`)
+		if (this.config.multiRating === false && typeof this.config.name === 'undefined') {
+			console.error(`Starry: Give your Starry star rating elements with multi rating a name!`)
 			return false
 		}
 
@@ -178,16 +178,13 @@ class Starry {
 						targetEl = event.target.closest('.Starry-star')
 					}
 
-					const onRateResult = this.config.onRate({
-						name: this.config.name,
-						value: targetEl.getAttribute('data-value')
-					})
+					const onRateResult = this.config.onRate(targetEl.getAttribute('data-value'))
 
 					if (onRateResult !== false) {
-                        this.currentRating = targetEl.getAttribute('data-value')
+                        this.currentRating = parseInt(targetEl.getAttribute('data-value'))
 
                         if (this.config.setStarsAfterRating === true) {
-                            this.config.beginWith = (parseInt(targetEl.getAttribute('data-value')) / this.config.stars) * 100
+                            this.config.beginWith = (this.currentRating / this.config.stars) * 100
                         }
 					}
 
