@@ -94,3 +94,7 @@ Starry use [cookies](http://en.wikipedia.org/wiki/HTTP_cookie), to save ratings!
 ## License
 
 The MIT License (MIT) - [View LICENSE.md](LICENSE.md)
+
+## Resources
+
+- [Starry v3.1.3 Documentation](https://teddy95.github.io/Starry/v3.1.3)
