@@ -10,18 +10,18 @@ Include Starry scripts and stylesheets in your html DOM:
 
 ```html
 <!-- Local file -->
-<link rel="stylesheet" type="text/css" href="./dist/starry.min.css" />
+<link href="./dist/starry.min.css" type="text/css" rel="stylesheet" />
 
 <!-- CDN -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.css" />
+<link href="https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.css" type="text/css" rel="stylesheet" />
 ```
 
 ```html
 <!-- Local file -->
-<script type='text/javascript' language='javascript' src='./dist/starry.min.js'></script>
+<script src="./dist/starry.min.js" type="text/javascript" language="javascript"></script>
 
 <!-- CDN -->
-<script type='text/javascript' language='javascript' src='https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.js" type="text/javascript" language="javascript"></script>
 ```
 
 Or install Starry as a Node dependency:
