@@ -17,6 +17,7 @@ Include Starry scripts and stylesheets in your html DOM:
 ```
 
 ```html
+<!-- Local file -->
 <script type='text/javascript' language='javascript' src='./dist/starry.min.js'></script>
 
 <!-- CDN -->
