@@ -111,18 +111,18 @@ const Starry = require('starry-rating')
 
 			<pre><code class="html">
 &#x3C;!-- Local file --&#x3E;
-&#x3C;link rel=&#x22;stylesheet&#x22; type=&#x22;text/css&#x22; href=&#x22;./dist/starry.min.css&#x22; /&#x3E;
+&#x3C;link href=&#x22;./dist/starry.min.css&#x22; type=&#x22;text/css&#x22; rel=&#x22;stylesheet&#x22; /&#x3E;
 
 &#x3C;!-- CDN --&#x3E;
-&#x3C;link rel=&#x22;stylesheet&#x22; type=&#x22;text/css&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.css&#x22; /&#x3E;
+&#x3C;link href=&#x22;https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.css&#x22; type=&#x22;text/css&#x22; rel=&#x22;stylesheet&#x22; /&#x3E;
 			</code></pre>
 
 			<pre><code class="html">
 &#x3C;!-- Local file --&#x3E;
-&#x3C;script type=&#x27;text/javascript&#x27; language=&#x27;javascript&#x27; src=&#x27;./dist/starry.min.js&#x27;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;./dist/starry.min.js&#x22; type=&#x22;text/javascript&#x22; language=&#x22;javascript&#x22;&#x3E;&#x3C;/script&#x3E;
 
 &#x3C;!-- CDN --&#x3E;
-&#x3C;script type=&#x27;text/javascript&#x27; language=&#x27;javascript&#x27; src=&#x27;https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.js&#x27;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.js&#x22; type=&#x22;text/javascript&#x22; language=&#x22;javascript&#x22;&#x3E;&#x3C;/script&#x3E;
 			</code></pre>
 
 			<br />
@@ -280,7 +280,7 @@ var starRating = new Starry(starRatingEl, {
 							<td>icons</td>
 							<td>Object</td>
 							<td>Default <a class="smooth" href="https://github.com/Teddy95/Starry/tree/master/dist/icons" target="_blank">Starry icons</a>.</td>
-							<td>Icon images. Object with properties `blank`, `active` and `hover`. Use a string for each image source.</td>
+							<td>Icon images. Object with properties <code>blank</code> (<img src="./assets/icons/blank.svg" alt="" />), <code>active</code> (<img src="./assets/icons/active.svg" alt="" />) and <code>hover</code> (<img src="./assets/icons/hover.svg" alt="" />). Use a string for each image source.</td>
 						</tr>
 					</tbody>
 				</table>
